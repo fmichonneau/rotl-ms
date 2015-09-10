@@ -209,18 +209,29 @@ No branch lengths for trees from the synthetic TOL, limit applications for
 comparative data, but could be possible to use calibrations from time tree
 databases.
 
-Demonstration (1) getting relationships from a list of taxa
+\section{Demonstrations}
+\label{sec:demonstrations}
 
-Demonstration (2) getting tree from a given study
+\subsection{Getting relationships from a list of taxa}
+\label{sec:get-relationships}
+
+\subsection{Getting tree from a given study}
+\label{sec:get-tree-study}
 
 * Which studies are available in OTL?
 * How to look for them?
 
-Demonstration (3) exploring the taxonomy
+\subsection{Exploring the taxonomy}
+\label{sec:exploring-taxonomy}
 
-Demonstration (4) how does rotl fit into the R package ecosystem?
 
-Conclusion
+\subsection{How does rotl fit into the R package ecosystem?}
+\label{sec:how-does-rotl-fit}
+
+
+
+\section{Conclusion}
+\label{sec:conclusion}
 
 Resource as useful as the data that is in it. To make data available, it needs
 to follow conventions so it can be incorporated into the OTL, i.e., submit tree
@@ -228,14 +239,16 @@ files (not images) to public repositories.
 
 OTL provides an easy-to-use interface to submit studies.
 
-Availability
+\section{Availability}
+\label{sec:availability}
 
-`rotl` is available both from the CRAN repository
+\code{rotl} is available both from the CRAN repository
 (https://cran.r-project.org/package=rotl) and from GitHub
 (https://github.com/ropensci/rotl).
 
 
-Acknowledgements
+\section{Acknowledgments}
+\label{sec:acknowledgments}
 
 * OpenTree of Life hackathon
 * Scott Chamberlain for code review.
