@@ -1,0 +1,243 @@
+
+\documentclass[12pt,letterpaper]{article}
+
+%%%%% packages provided by sys bio template
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+%% \usepackage[english]{babel} %% I use polyglossia instead
+%% not needed: \usepackage{pifont}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{indentfirst}
+\usepackage[normalem]{ulem}
+\usepackage{booktabs}
+%\usepackage{nag}
+\usepackage{natbib}
+%\usepackage{bibtex}
+\usepackage{float}
+\usepackage{latexsym}
+%\usepackage{hyperref}
+\usepackage{url}
+%\usepackage{html}
+\usepackage{hyperref}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{array}
+%\usepackage{mhchem}
+\usepackage{ifthen}
+%% I am already using it: \usepackage{caption}
+\usepackage{hyperref}
+%\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{amstext}
+%%%%
+
+\usepackage{natbib}
+\usepackage{lineno}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage[font=sf]{caption}
+
+% Latex special characters are rendered correctly with XeTeX
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+% Words are cut where needed
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=american]{english}
+
+% Use fancy fonts
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Crimson Text}
+\setsansfont{SourceSansPro-Regular}
+
+%%% syst bio options
+\linespread{1.66}
+% All text should be double-spaced
+% with occasional exceptions for tables.
+\raggedright
+\setlength{\parindent}{0.5in}
+
+\setcounter{secnumdepth}{0}
+
+% Our sections are not numbered and our papers do not have
+% Tables of Contents. We don't
+% present a list of figures or list of tables, either.
+
+% Any common font is fine.
+% (A common sans-serif font should be used on figures, but figures should be
+% separate from the LaTeX document.)
+
+\pagestyle{empty}
+
+\renewcommand{\section}[1]{%
+\bigskip
+\begin{center}
+\begin{Large}
+\normalfont\scshape #1
+\medskip
+\end{Large}
+\end{center}}
+
+\renewcommand{\subsection}[1]{%
+\bigskip
+\begin{center}
+\begin{large}
+\normalfont\itshape #1
+\end{large}
+\end{center}}
+
+\renewcommand{\subsubsection}[1]{%
+\vspace{2ex}
+\noindent
+\textit{#1.}---}
+
+\renewcommand{\tableofcontents}{}
+
+\bibpunct{(}{)}{;}{a}{}{,}  % this is a citation format command for natbib
+%%% end syst bio options
+
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.2\hsize}X}
+
+% ----------------------------------------------------------------------------- %
+
+\begin{document}
+
+\begin{flushright}
+Version dated: \today
+\end{flushright}
+
+\bigskip
+\noindent AN R PACKAGE TO INTERACT WITH THE OPEN TREE OF LIFE
+
+\bigskip
+\medskip
+
+\begin{center}
+  \noindent{\Large \bf \code{rotl} an R package to interact with the Open Tree
+    of Life Data}
+
+\bigskip
+
+\noindent{\normalsize \sc Fran\c{c}ois Michonneau}\\
+\noindent {\small \it $^1$Florida Museum of Natural History & Whitney Laboratory
+  for Marine Sciences, University of Florida, Gainesville,
+  FL 32611-7800, USA}\\
+\end{center}
+\medskip
+
+\noindent{\bf Corresponding author:} Fran\c{c}ois Michonneau, Division of
+Invertebrate Zoology, Florida Museum of Natural History, Gainesville, FL
+32611-7800, USA; E-mail: francois.michonneau@gmail.com\\
+
+
+\vspace{1in}
+
+\subsubsection{Abstract}
+
+Abstract goes here.
+
+
+\vspace{1.5in}
+
+Phylogenetic information has become central to many facets of the life
+sciences. However, the information is scattered across many publications, often
+only available as image files and the variety of file formats used to store
+phylogenetic information makes it difficult for researchers outside the field of
+phylogenetics to access this information.
+
+The Open Tree of Life (http://opentreeoflife.org) aims at assembling and
+synthetizing our current understanding of the phylogenetic relationships across
+all organisms on Earth \cite{Hinchliff2015}. This aims is achieved by combining
+taxonomic information with published phylogenies. This is made possible by
+mapping species found in published studies to species in the taxonomy, a
+taxonomic lookup service is therefore needed. Presentation of the OTL:
+synthesis, 2.3M tips, continuously updated.
+
+This resource has many applications across the life sciences to explore
+fundamental questions in evolution, biodiversity, conservation, and has great
+potential for education and outreach purposes.
+
+OTL also provides web interface to explore the open tree (and download
+subtrees?)
+
+Open Tree of Life provides an Application Programming Interface (API) to the
+different services it offers. Here, we present \code{rotl} an R pacakge that
+allows users to interact with the OTL's API to import phylogenetic trees and
+taxonomic information in R where this information can be used to be analyzed
+with the rich suites of packages available for phylogenetic analyses.
+
+R has become a popular software and programming environment to analyze, explore
+and visualize phylogenetic data because of the variety of packages available
+\cite{}. ape, phytools, geiger, ggtree, phylobase, etc... (cite task view).
+
+The OTL's API, and in turn \code{rotl}, provides services (1) to download a tree
+from a set of species names, this can be useful to illustrate a manuscript, map
+the evolution of a character in a taxonomic group, etc....; (2) to download a
+tree published in a paper that might be used to build the synthetic tree, this
+can be useful to reproduce or expand on an already published analysis; (3) to
+download information about the taxonomy across all organisms considered by OTL
+in a phylogenetic context.
+
+Many other applications, getting trees for educational purpose (illustrating
+course material, explore relationships among species), illustrate manuscript.
+
+\section{General features}
+
+The tree can be imported into R memory to interact with other packages and be
+used in comparative analyses, or they can be written to files so they can
+interact with other programs.
+
+Interface with both the synthetic tree from Open Tree of Life and particular
+trees from studies. Open Tree also features taxonomy lookup that can be used
+with partial matching.
+
+Limitations
+
+No branch lengths for trees from the synthetic TOL, limit applications for
+comparative data, but could be possible to use calibrations from time tree
+databases.
+
+Demonstration (1) getting relationships from a list of taxa
+
+Demonstration (2) getting tree from a given study
+
+* Which studies are available in OTL?
+* How to look for them?
+
+Demonstration (3) exploring the taxonomy
+
+Demonstration (4) how does rotl fit into the R package ecosystem?
+
+Conclusion
+
+Resource as useful as the data that is in it. To make data available, it needs
+to follow conventions so it can be incorporated into the OTL, i.e., submit tree
+files (not images) to public repositories.
+
+OTL provides an easy-to-use interface to submit studies.
+
+Availability
+
+`rotl` is available both from the CRAN repository
+(https://cran.r-project.org/package=rotl) and from GitHub
+(https://github.com/ropensci/rotl).
+
+
+Acknowledgements
+
+* OpenTree of Life hackathon
+* Scott Chamberlain for code review.
+
+\end{document}
