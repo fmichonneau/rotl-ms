@@ -125,13 +125,13 @@ Version dated: \today
 \medskip
 
 \begin{center}
-  \noindent{\Large \bf \code{rotl} an R package to interact with the Open Tree
+  \noindent{\Large \bf \texttt{rotl} an R package to interact with the Open Tree
     of Life Data}
 
 \bigskip
 
 \noindent{\normalsize \sc Fran\c{c}ois Michonneau}\\
-\noindent {\small \it $^1$Florida Museum of Natural History & Whitney Laboratory
+\noindent {\small \it $^1$Florida Museum of Natural History \& Whitney Laboratory
   for Marine Sciences, University of Florida, Gainesville,
   FL 32611-7800, USA}\\
 \end{center}
@@ -151,63 +151,85 @@ Abstract goes here.
 
 \vspace{1.5in}
 
-Phylogenetic information has become central to many facets of the life
-sciences. However, the information is scattered across many publications, often
-only available as image files and the variety of file formats used to store
-phylogenetic information makes it difficult for researchers outside the field of
-phylogenetics to access this information.
+Phylogenetic information data is being used in many disciplines of the
+life sciences, and phylogenetic comparative methods have seen their
+use diversified in recent years (community phylogenetics,
+...). However, phylogenetic information is scattered, often only
+available as image files within publications \cite{Mounce}, and the
+variety of file formats used to store phylogenetic information makes
+it difficult for researchers to access
 
-The Open Tree of Life (http://opentreeoflife.org) aims at assembling and
-synthetizing our current understanding of the phylogenetic relationships across
-all organisms on Earth \cite{Hinchliff2015}. This aims is achieved by combining
-taxonomic information with published phylogenies. This is made possible by
-mapping species found in published studies to species in the taxonomy, a
-taxonomic lookup service is therefore needed. Presentation of the OTL:
-synthesis, 2.3M tips, continuously updated.
+The Open Tree of Life (http://opentreeoflife.org) aims at assembling
+and synthesizing the current understanding of phylogenetic
+relationships across all organisms on Earth \cite{Hinchliff2015},
+while providing tools and services to allow users to access this
+information easily. OTL combines taxonomic information that serves as
+the backbone for the phylogenetic relationships, and published
+phylogenies to elucidate relationships among taxa.
 
-This resource has many applications across the life sciences to explore
-fundamental questions in evolution, biodiversity, conservation, and has great
-potential for education and outreach purposes.
+The current draft of the Open Tree of Life contains 2.3 million
+tips. Because of its comprehensive nature, researchers have access to
+phylogenetic information for species that have yet to be included in
+any phylogenetic tree as their position is inferred based on
+taxonomy. Beyond obvious applications across the life sciences to
+explore research questions in evolution, biodiversity, and
+conservation, the resources OTL provides could be used in education
+and outreach (e.g., illustrating course material, develop outreach
+activities to explore relationships among species).
 
-OTL also provides web interface to explore the open tree (and download
-subtrees?)
+The Open Tree of Life project provides a web interface to explore,
+query and download parts of the Open Tree
+(http://tree.opentreeoflife.org). Additionally, the project provides
+an Application Programming Interface (API) to the different services
+it offers allowing users to interact programmatically with the
+data. Here, we present \texttt{rotl} an R package that allows users to
+interact with the OTL's API to search for and import phylogenetic
+trees and taxonomic information. Having access to this data directly
+from within R allows researchers to take advantage of the multiple R
+packages that are available to visualize, analyze and manipulate
+phylogenetic trees (ape, phytools, geiger, ggtree, phylobase,
+etc... cite task view).
 
-Open Tree of Life provides an Application Programming Interface (API) to the
-different services it offers. Here, we present \code{rotl} an R pacakge that
-allows users to interact with the OTL's API to import phylogenetic trees and
-taxonomic information in R where this information can be used to be analyzed
-with the rich suites of packages available for phylogenetic analyses.
 
-R has become a popular software and programming environment to analyze, explore
-and visualize phylogenetic data because of the variety of packages available
-\cite{}. ape, phytools, geiger, ggtree, phylobase, etc... (cite task view).
+\section{Presentation of the services provided by OTL}
 
-The OTL's API, and in turn \code{rotl}, provides services (1) to download a tree
-from a set of species names, this can be useful to illustrate a manuscript, map
-the evolution of a character in a taxonomic group, etc....; (2) to download a
-tree published in a paper that might be used to build the synthetic tree, this
-can be useful to reproduce or expand on an already published analysis; (3) to
-download information about the taxonomy across all organisms considered by OTL
-in a phylogenetic context.
+Presentation of the OTL: synthesis, 2.3M tips, continuously
+updated. There are therefore 4 resources that the OTL provides: (1)
+the taxonomic information used as the backbone from the tree, (2) the
+trees and associated published studies that are used to build the
+synthetic tree, (3) a taxonomic name resolution service used to map
+species names to the Open Tree Taxonomy, (4) the synthetic tree. Also,
+Graph of Life endpoint but not of use for normal users and beyond the
+scope of this paper.
 
-Many other applications, getting trees for educational purpose (illustrating
-course material, explore relationships among species), illustrate manuscript.
-
-\section{General features}
-
-The tree can be imported into R memory to interact with other packages and be
-used in comparative analyses, or they can be written to files so they can
-interact with other programs.
+\texttt{rotl} provides access to these services so the data stored in
+OTL (including trees) can be imported into R (either in memory or by
+writing to files) to interact with other packages and be used in
+comparative analyses, or they can be written to files so they can used
+by other programs.
 
 Interface with both the synthetic tree from Open Tree of Life and particular
 trees from studies. Open Tree also features taxonomy lookup that can be used
 with partial matching.
 
+The OTL's API, and in turn \texttt{rotl}, provides services (1) to
+download a tree from a set of species names, this can be useful to
+illustrate a manuscript, map the evolution of a character in a
+taxonomic group, etc....; (2) to download a tree published in a paper
+that might be used to build the synthetic tree, this can be useful to
+reproduce or expand on an already published analysis; (3) to download
+information about the taxonomy across all organisms considered by OTL
+in a phylogenetic context.
+
+
+Tree versionning? Replicability of analyses
+
+
 Limitations
 
 No branch lengths for trees from the synthetic TOL, limit applications for
 comparative data, but could be possible to use calibrations from time tree
-databases.
+databases. Or combined with partial chronograms and use \cite{phyndr}.
 
 \section{Demonstrations}
 \label{sec:demonstrations}
@@ -242,7 +264,7 @@ OTL provides an easy-to-use interface to submit studies.
 \section{Availability}
 \label{sec:availability}
 
-\code{rotl} is available both from the CRAN repository
+\texttt{rotl} is available both from the CRAN repository
 (https://cran.r-project.org/package=rotl) and from GitHub
 (https://github.com/ropensci/rotl).
 
