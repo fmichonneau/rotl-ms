@@ -11,8 +11,8 @@ all: $(manuscript_tex) $(manuscript_bib) clean-partial
 	-xelatex -interaction=nonstopmode "\input" $<
 	xelatex -interaction=nonstopmode "\input" $<
 
-$(manuscript_tex):
-	Rscript -e "knitr::knit('$(manuscript_src)')"
+$(manuscript_tex): $(manuscript_src)
+	Rscript -e "knitr::knit('$<')"
 
 $(manuscript_bib):
 	-cp ~/Library/$(manuscript_bib) .
