@@ -39,8 +39,13 @@
 \usepackage{amstext}
 %%%%
 
-\usepackage{natbib}
+
+% line numbers
 \usepackage{lineno}
+\modulolinenumbers[5]
+\linenumbers
+
+\usepackage{natbib}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
