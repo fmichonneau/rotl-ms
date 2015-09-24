@@ -253,9 +253,12 @@ to reproduce or expand on an already published analysis.
 
 \section{Technical information about \texttt{rotl}}
 
-Use NCL/\texttt{rncl} to parse NEXUS/Newick files.
-
-Taxonomic information, singletons, but NCL can parse it.
+Phylogenetic information retrieved from OTL is converted into
+\texttt{ape::phylo} objects by \texttt{rotl} using the NEXUS Class Library
+\citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
+\url{https://cran.r-project.org/package=rncl}. Using NCL provides efficient
+parsing of large trees that may contain singletons nodes labeled with taxonomic
+information.
 
 \section{Demonstrations}
 \label{sec:demonstrations}
@@ -263,11 +266,22 @@ Taxonomic information, singletons, but NCL can parse it.
 \subsection{Getting relationships from a list of taxa}
 \label{sec:get-relationships}
 
+Requesting a topology from a list of taxa takes place in two steps: the taxa
+need to be matched to their identifiers in the Open Tree Taxonomy before
+requesting the relationships among them. The first step is performed using the
+TNRS.
+
+
+
 \subsection{Getting tree from a given study}
 \label{sec:get-tree-study}
 
 * Which studies are available in OTL?
 * How to look for them?
+
+<<>>=
+tt <- studies_find_studies(property = "ot:focalCladeOTTTaxonName", "mammalia")
+@
 
 \subsection{Exploring the taxonomy}
 \label{sec:exploring-taxonomy}
