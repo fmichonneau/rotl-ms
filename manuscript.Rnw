@@ -178,12 +178,13 @@ the backbone for the phylogenetic relationships, and published phylogenies to
 elucidate relationships among taxa. This combination of information is used to
 form the synthetic tree. Studies can be contributed to the synthetic tree
 through the curator interface \url{https://tree.opentreeoflife.org/curator},
-allowing the tree to be updated as relationships are elucidated or
-reevaluated. The current draft of the Open Tree of Life contains 2.3 million
-tips. Beyond obvious applications across the life sciences to explore research
-questions in evolution, biodiversity, and conservation, the resources OTL
-provides could be used in education and outreach (e.g., illustrating course
-material, develop outreach activities to explore relationships among species).
+allowing the synthetic tree to be continuously updated as relationships are
+elucidated or reevaluated. The current draft of the Open Tree of Life contains
+2.3 million tips. Beyond obvious applications across the life sciences to
+explore research questions in evolution, biodiversity, and conservation, the
+resources OTL provides could be used in education and outreach (e.g.,
+illustrating course material, develop outreach activities to explore
+relationships among species).
 
 % Because of its comprehensive nature, researchers have access to phylogenetic
 % information for species that have yet to be included in any phylogenetic tree
@@ -225,24 +226,27 @@ and its use will not be demonstrated in this paper but \texttt{rotl} has
 functions to retrieve data it provides.
 
 \texttt{rotl} gives users access to all endpoints provided by version 2 of the
-OTL's API. Phylogenetic trees served by the API can be imported directly into
+OTL's APIs. Phylogenetic trees served by the API can be imported directly into
 R's memory and are represented using the \texttt{ape} \cite{Paradis2004} tree
-structure (objects of class \texttt{phylo}) or can be written to files in the
-NEXUS, Newick or NeXML file formats. This allows researchers to use these trees
-either directly with other R packages, or to be imported in other programs that
-can read in phylogenetic tree files.
+structure (objects of class \texttt{phylo}), or can be written to files in the
+Newick, NEXUS \citep{Maddison1997} or NeXML \citep{Vos2012} file formats. This
+allows researchers to use these trees either directly with other R packages, or
+to be imported in other programs that can read in phylogenetic tree files.
 
 The synthetic tree currently does not have any branch lengths associated with
 it, therefore parametric comparative methods cannot be used on the trees
 returned by the API. However, resources and methods are being developed to add
-branch lengths information to these topological trees (e.g., \cite{Ksepka2015},
-\cite{Pennell2015}). Even without branch lengths, these trees could be useful to
+branch lengths information to these topological trees (e.g., \cite{Ksepka2015})
+or use topological trees to identify phylogenetically equivalent species to
+increase overlap between chronograms and species trait data
+\cite{Pennell2015}. Without branch lengths, these trees remain useful to
 illustrate relationships among species, or to map a trait on a phylogeny.
 
-\texttt{rotl} can also be used to download trees accompanying studies, and that
-are used to build the synthetic tree. All the trees from a study are available
-even if they do not contribute to the synthetic tree. These trees provide a
-useful resource to reproduce or expand on an already published analysis.
+\texttt{rotl} can also be used to download trees accompanying studies that have
+been submitted through the curator interface, and identify the trees that are
+being used to assemble the synthetic tree. These trees provide a useful resource
+to reproduce or expand on an already published analysis.
+
 %% any examples available?
 
 % Tree versionning? Replicability of analyses
