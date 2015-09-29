@@ -161,18 +161,18 @@ and computing technologies. In parallel, new phylogenetic comparative methods
 have been developed and make use of these phylogenies to explore fundamental
 questions about the origin of biodiversity including the evolution of
 morphological and ecological traits, the spatio-temporal variation in speciation
-rates, or both \cite{Pennell2013}. The development of these methods has
+rates, or both \citep{Pennell2013}. The development of these methods has
 contributed to the need for a greater availability of high-quality phylogenetic
 information across life. However, phylogenetic information is scattered, often
 only available as image files within publications, and the variety of file
 formats used to store phylogenetic data makes it difficult for researchers to
 access, synthesize, and integrate this information into their own research
-(\cite{Stoltzfus2012}, but see \cite{Cranston2014} for suggestions of best
+(\citealt{Stoltzfus2012}, but see \citealt{Cranston2014} for suggestions of best
 practices).
 
 The Open Tree of Life (OTL) project aims at assembling and synthesizing our
 current understanding of phylogenetic relationships across all organisms on
-Earth \cite{Hinchliff2015}, while providing tools and services that facilitate
+Earth \citep{Hinchliff2015}, while providing tools and services that facilitate
 access to this information. OTL combines taxonomic information that serves as
 the backbone for the phylogenetic relationships, and published phylogenies to
 elucidate relationships among taxa. This combination of information is used to
@@ -227,7 +227,7 @@ functions to retrieve data it provides.
 
 \texttt{rotl} gives users access to all endpoints provided by version 2 of the
 OTL's APIs. Phylogenetic trees served by the API can be imported directly into
-R's memory and are represented using the \texttt{ape} \cite{Paradis2004} tree
+R's memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
 structure (objects of class \texttt{phylo}), or can be written to files in the
 Newick, NEXUS \citep{Maddison1997} or NeXML \citep{Vos2012} file formats. This
 allows researchers to use these trees either directly with other R packages, or
@@ -236,12 +236,12 @@ to be imported in other programs that can read in phylogenetic tree files.
 The synthetic tree currently does not have any branch lengths associated with
 it, therefore parametric comparative methods cannot be used directly on the
 trees returned by the API. However, resources and methods are being developed to
-add branch lengths information to these topological trees (e.g.,
-\cite{Ksepka2015}) or use topological trees to identify phylogenetically
-equivalent species to increase overlap between chronograms and species trait
-data \cite{Pennell2015}. Without branch lengths, these trees remain useful to
-illustrate relationships among species, or to map a trait on a phylogeny for
-instance.
+add branch lengths information to these topological trees
+\citep[e.g.,][]{Ksepka2015} or use topological trees to identify
+phylogenetically equivalent species to increase overlap between chronograms and
+species trait data \citep{Pennell2015}. Without branch lengths, these trees
+remain useful to illustrate relationships among species, or to map a trait on a
+phylogeny for instance.
 
 %% any examples available?
 
@@ -319,33 +319,49 @@ plot(tree)
 \label{sec:get-tree-study}
 
 \texttt{rotl} can also be used to retrieve trees accompanying studies that have
-been submitted through the curator interface, and also identify the trees that
-are being used to assemble the synthetic tree. These trees provide a useful
-resource to reproduce or expand on an already published analysis.
+been submitted through the curator interface, and identify the trees that
+contribute to the synthetic tree. These trees provide a useful resource to
+reproduce or expand on an already published analysis.
 
 Criteria that can be used to search for studies or their associated trees are
 available through the output of the function
 \texttt{studies\_properties}. Typically, users will want to search for studies
-or trees based on a taxon but other criteria such as the title of the
-publication. Here we demonstrate how to look for and retrieve a tree for study
-focusing on cats, Felidae (Figure~\ref{fig:plot_cats}).
+or trees based on taxon names (or their Open Taxonomy identifiers), but other
+criteria such as the title of the publication can be used. Here we demonstrate
+how to look for and retrieve a tree for study focusing on the family Felidae
+(Figure~\ref{fig:plot_cats}).
 
-
-<<plot_cats, fig.cap="Tree from \\cite{} obtained from OTL">>=
+<<get_cats, fig.cap="Tree from \\cite{} obtained from OTL">>=
 cat_studies <- studies_find_studies(property = "ot:focalCladeOTTTaxonName",
                                     value = "felidae")
 cat_studies
-cat_tree <- get_study_tree(study_id = cat_studies[["study_ids"]][1],
-                           tree_id = list_trees(cat_studies)[[1]][1])
-plot(cat_tree)
 @
 
-\subsection{Exploring the taxonomy}
-\label{sec:exploring-taxonomy}
+Currently only one study focused on this family is available from OTL, and a
+single tree is associated with it. We can then retrieve the identifiers and pass
+them to the function \texttt{get\_study\_tree} to have the tree in memory:
+
+<<get_cat_tree, results='hide'>>=
+cat_tree <- get_study_tree(study_id = cat_studies[["study_ids"]][1],
+                           tree_id = cat_studies[["tree_ids"]][1])
+cat_tree
+@
+
+<<print_cat_tree, echo=FALSE>>=
+print(cat_tree, printlen = 4)
+@
+
+When more than one tree is available for a given study, the function
+\texttt{list\_trees} returns a list to retrieve the tree identifiers for each
+study easily. Alternatively, the function \texttt{get\_study} returns all the
+trees associated with a particular study. Additional details about the study can
+be obtained using the function \texttt{get\_study\_meta}.
 
 
-\subsection{How does rotl fit into the R package ecosystem?}
+\subsection{How does \texttt{rotl} fit into the R package ecosystem?}
 \label{sec:how-does-rotl-fit}
+
+
 
 
 
