@@ -278,7 +278,7 @@ First, we use the function \texttt{tnrs\_match\_names} to match the taxon names 
 their Open Taxonomy identifiers.
 
 <<get_taxa, cache=TRUE>>=
-taxa <- tnrs_match_names(names = c("Escherichia coli",
+taxa <- tnrs_match_names(names = c("Escherichia colli",
                                    "Chlamydomonas reinhardtii",
                                    "Drosophila melanogaster",
                                    "Arabidopsis thaliana",
@@ -290,20 +290,20 @@ taxa <- tnrs_match_names(names = c("Escherichia coli",
                                    "Danio rerio"))
 @
 
-The function \texttt{tnrs\_match\_names} returns a data frame that lists the Open
-Tree identifiers as well as other information to help users to ensure that the
-taxa matched are the correct ones. Here, there is no ambiguity in the taxa
+The function \texttt{tnrs\_match\_names} returns a data frame that lists the
+Open Tree identifiers as well as other information to help users to ensure that
+the taxa matched are the correct ones. Here, there is no ambiguity in the taxa
 matched, however, as the Open Tree Taxonomy includes taxa from bacteria, plants,
 and animals that are regulated by different nomenclatural codes (ICNP, ICN and
 ICZN respectively), OTL and \texttt{rotl} provide tools to deal with potential
-hemihomonyms. For instance, the argument \texttt{context\_name} can be used to
-limit potential matches to a taxonomic group. The function
-\texttt{tnrs\_contexts} provides a list of possible taxonomic contexts. When this
-strategy cannot be used in case the tree encompasses multiple domains, the
-functions \texttt{inspect} and \texttt{update} list alternative matches for a
-taxon name, and replace it in the results, respectively. An example of this
-approach is provided in the vignette ``How to use rotl?'' that accompanies the
-package.
+hemihomonyms. The argument \texttt{context\_name} can be used to limit potential
+matches to a taxonomic group (see the function \texttt{tnrs_contexts} for a list
+of possible options).  When this strategy cannot be used in case the tree
+encompasses multiple domains (as in the present example), the function
+\texttt{inspect} lists alternative matches for a taxon name, and \texttt{update}
+replaces it in the results. An example of this approach is provided in the
+vignette ``How to use rotl?'' that accompanies the package.
+
 By default, approximate matching is enabled when attempting to match taxonomic
 names to their Open Tree Taxonomy identifiers. Additionally, taxonomic synonyms
 are included in the Open Tree Taxonomy allowing researchers to match correct
@@ -346,8 +346,9 @@ cat_studies
 @
 
 Currently only one study focused on this family is available from OTL, and a
-single tree is associated with it. We can then retrieve the identifiers and pass
-them to the function \texttt{get\_study\_tree} to have the tree in memory:
+single tree is associated with it. We can then retrieve the study and tree
+identifiers, and pass them to the function \texttt{get\_study\_tree} to have the
+tree in memory:
 
 <<get_cat_tree, results='hide'>>=
 cat_tree <- get_study_tree(study_id = cat_studies[["study_ids"]][1],
@@ -360,10 +361,11 @@ print(cat_tree, printlen = 4)
 @
 
 When more than one tree is available for a given study, the function
-\texttt{list\_trees} returns a list to retrieve the tree identifiers for each
+\texttt{list\_trees} returns a list containing the tree identifiers for each
 study easily. Alternatively, the function \texttt{get\_study} returns all the
-trees associated with a particular study. Additional details about the study can
-be obtained using the function \texttt{get\_study\_meta}.
+trees (by default as \texttt{ape::phylo} objects) associated with a particular
+study. Additional details about the study (i.e., its metadata) can be obtained
+using the function \texttt{get\_study\_meta}.
 
 
 \subsection{How does \texttt{rotl} fit into the R package ecosystem?}
