@@ -304,6 +304,14 @@ functions \texttt{inspect} and \texttt{update} list alternative matches for a
 taxon name, and replace it in the results, respectively. An example of this
 approach is provided in the vignette ``How to use rotl?'' that accompanies the
 package.
+By default, approximate matching is enabled when attempting to match taxonomic
+names to their Open Tree Taxonomy identifiers. Additionally, taxonomic synonyms
+are included in the Open Tree Taxonomy allowing researchers to match correct
+identifiers for taxon names that might include misspellings or synonyms. These
+features will facilitate the tedious data cleaning process often needed when
+matching taxon names. In the example provided, both \textit{Escherichia coli}
+and \textit{Saccharomyces cerevisiae} are misspelled but OTL's TNRS finds the
+correct match for these taxa.
 
 Now that the taxon names are matched to the Open Tree identifiers, we can pass
 them to the function \texttt{tol\_induced\_subtree} to retrieve the
