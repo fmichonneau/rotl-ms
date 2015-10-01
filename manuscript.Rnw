@@ -361,7 +361,54 @@ be obtained using the function \texttt{get\_study\_meta}.
 \subsection{How does \texttt{rotl} fit into the R package ecosystem?}
 \label{sec:how-does-rotl-fit}
 
+In recent years, R has become part of the toolbox of many researchers in
+evolutionary biology. As many methods for comparative analyses are implemented,
+and because it is a relatively easy to use programming language, R greatly
+facilitates the analysis of large datasets, and allows researchers to combine
+methods in novel ways. Additionally, as more data is made available online and
+accessible using APIs, many R packages have been developed to take advantage of
+these datasets, especially spearheaded by the organization rOpenSci
+\url{https://ropensci.org}. \texttt{rotl} contributes to these initiatives and
+data from OTL can be combined with other sources easily. For instance in
+Figure~\ref{cat_map}, we show how we can obtain a map of the occurrences for
+some of the cat species (genus \textit{Lynx}) included in the phylogeny above
+using records for these species found in GBIF (code is available in
+supplementary material).
 
+<<cat_map, echo=FALSE, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}'>>=
+
+suppressPackageStartupMessages(library(rgbif))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(maps))
+
+cat_species <- cat_tree$tip.label
+lynx_species <- grep("^Lynx", cat_tree$tip.label, value = TRUE)
+
+gbif_keys <- sapply(lynx_species,
+                    function(x) name_backbone(name = x)$speciesKey,
+                    USE.NAMES = FALSE)
+
+lynx_loc <- occ_search(taxonKey = gbif_keys, limit = 500,
+                       return = "data", fields = "minimal",
+                       hasCoordinate = TRUE)
+
+lynx_loc <- do.call("rbind", lynx_loc)
+lynx_loc[["decimalLatitude"]] <- as.numeric(lynx_loc[["decimalLatitude"]])
+lynx_loc[["decimalLongitude"]] <- as.numeric(lynx_loc[["decimalLongitude"]])
+lynx_loc <- lynx_loc[complete.cases(lynx_loc), ]
+
+names(lynx_loc)[1] <- "Species"
+
+world <- map_data("world")
+
+ggplot(lynx_loc) +
+    annotation_map(world, fill="gray40", color="gray40") +
+    geom_point(aes(y = decimalLatitude, x = decimalLongitude, color = Species),
+               alpha = 0.3, size = 2) +
+    coord_map(projection = "mercator", orientation = c(90, 0, 0)) +
+    xlab("Longitude") + ylab("Latitude")
+
+@
 
 
 
