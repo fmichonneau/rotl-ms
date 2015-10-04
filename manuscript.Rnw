@@ -297,7 +297,7 @@ matched, however, as the Open Tree Taxonomy includes taxa from bacteria, plants,
 and animals that are regulated by different nomenclatural codes (ICNP, ICN and
 ICZN respectively), OTL and \texttt{rotl} provide tools to deal with potential
 hemihomonyms. The argument \texttt{context\_name} can be used to limit potential
-matches to a taxonomic group (see the function \texttt{tnrs_contexts} for a list
+matches to a taxonomic group (see the function \texttt{tnrs\_contexts} for a list
 of possible options).  When this strategy cannot be used in case the tree
 encompasses multiple domains (as in the present example), the function
 \texttt{inspect} lists alternative matches for a taxon name, and \texttt{update}

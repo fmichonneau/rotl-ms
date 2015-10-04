@@ -28,3 +28,10 @@ clean-partial:
 clean: clean-partial
 	-rm $(manuscript_pdf)
 	-rm $(manuscript_tex)
+
+clear-cache:
+	- rm -rf ./cache
+
+install-pkgs:
+	- Rscript -e "install.packages(c('rgbif', 'mapproj'), quiet=TRUE)"
+
