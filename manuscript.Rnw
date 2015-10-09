@@ -320,9 +320,9 @@ them to the function \texttt{tol\_induced\_subtree} to retrieve the
 relationships among these taxa. In turn, the tree can be plotted directly as it
 is returned as an \texttt{ape::phylo} object (Figure~\ref{fig:plot_taxa}).
 
-<<plot_taxa, cache=TRUE, fig.cap="The phylogenetic tree returned by OTL for the list of model species used as an example.">>=
+<<plot_taxa, fig.height=4, cache=TRUE, fig.cap="The phylogenetic tree returned by OTL for the list of model species used as an example.">>=
 tree <- tol_induced_subtree(ott_ids = taxa[["ott_id"]])
-plot(tree)
+plot(tree, cex=.8, label.offset=.1, no.margin=TRUE)
 @
 
 \subsection{Getting trees from studies}
@@ -360,6 +360,10 @@ cat_tree
 
 <<print_cat_tree, echo=FALSE>>=
 print(cat_tree, printlen = 4)
+@
+
+<<plot_cats, fig.height=4.2, echo=FALSE, fig.cap='Phylogeny of the Felidae published in \\citealt{Johnson2006} and retrieved from OTL using \\texttt{rotl}'>>=
+plot(cat_tree, label.offset=.0001, cex=.75, no.margin=TRUE)
 @
 
 When more than one tree is available for a given study, the function
@@ -418,7 +422,8 @@ ggplot(lynx_loc) +
     geom_point(aes(y = decimalLatitude, x = decimalLongitude, color = Species),
                alpha = 0.3, size = 2) +
     coord_map(projection = "mercator", orientation = c(90, 0, 0)) +
-    xlab("Longitude") + ylab("Latitude")
+    xlab("Longitude") + ylab("Latitude") +
+    theme(legend.position="top") + ylim(c(0,72))
 
 @
 
