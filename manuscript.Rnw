@@ -135,10 +135,12 @@ Version dated: \today
 
 \bigskip
 
-\noindent{\normalsize \sc Fran\c{c}ois Michonneau}\\
-\noindent {\small \it $^1$Florida Museum of Natural History \& Whitney Laboratory
-  for Marine Sciences, University of Florida, Gainesville,
-  FL 32611-7800, USA}\\
+\noindent{\normalsize \sc Fran\c{c}ois Michonneau$^1$, Joseph Brown$^2$, David Winter$^3$}\\
+\noindent {\small \it $^1$Florida Museum of Natural History \& Whitney
+  Laboratory for Marine Sciences, University of Florida, Gainesville,
+  FL, USA}\\
+\noindent{\small \it $^2$University of Michigan, Ann Arbor, MI, USA} \\
+\noindent{\small \it $^3$Arizona State University, Tempe, AZ, USA} \\
 \end{center}
 \medskip
 
