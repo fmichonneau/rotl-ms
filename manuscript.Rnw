@@ -441,9 +441,15 @@ OTL provides an easy-to-use interface to submit studies.
 \section{Availability}
 \label{sec:availability}
 
-\texttt{rotl} is available both from the CRAN repository
-(https://cran.r-project.org/package=rotl) and from GitHub
-(https://github.com/ropensci/rotl).
+\texttt{rotl} is free, open source, and released under a Simplified
+BSD license. Stable versions are available from the CRAN repository
+\url{https://cran.r-project.org/package=rotl}, and development
+versions are available from GitHub
+\url{https://github.com/ropensci/rotl}.
+
+Python \url{https://github.com/OpenTreeOfLife/pyopentree} and Ruby
+\url{https://github.com/SpeciesFileGroup/bark} libraries to interact
+with the OTL APIs are also available.
 
 
 \section{Acknowledgments}
