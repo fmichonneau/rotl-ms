@@ -183,10 +183,9 @@ through the curator interface \url{https://tree.opentreeoflife.org/curator},
 allowing the synthetic tree to be continuously updated as relationships are
 elucidated or reevaluated. The current draft of the Open Tree of Life contains
 2.3 million tips. Beyond obvious applications across the life sciences to
-explore research questions in evolution, biodiversity, and conservation, the
-resources OTL provides could be used for education and outreach (e.g.,
-illustrating course material, develop outreach activities to explore
-relationships among species).
+explore questions in evolution, biodiversity, and conservation, the resources
+OTL provides could be used for education and outreach (e.g., illustrating course
+material, develop outreach activities to explore relationships among species).
 
 % Because of its comprehensive nature, researchers have access to phylogenetic
 % information for species that have yet to be included in any phylogenetic tree
@@ -194,21 +193,23 @@ relationships among species).
 
 The Open Tree of Life project provides a web interface to explore, query and
 download parts of the synthetic Open Tree
-(\url{http://tree.opentreeoflife.org}). Additionally, the project provides an
-Application Programming Interface (API) to the different services to work
+(\url{http://tree.opentreeoflife.org}). Additionally, the project provides
+Application Programming Interfaces (APIs) to the different services to work
 programmatically with the underlying data. Here, we present \texttt{rotl} an R
-package to interact with OTL's API using R syntax to search for, and import
+package to interact with OTL's APIs using R syntax to search for, and import
 phylogenetic trees and taxonomic information into R. Having access to this data
 directly in R allows researchers to take advantage of the multiple packages that
 are available to visualize, analyze and manipulate phylogenetic and comparative
-data (ape, phytools, geiger, ggtree, phylobase, RNeXML, etc... cite task view
-\url{https://cran.r-project.org/web/views/Phylogenetics.html}).
+data (e.g., ape, phytools, geiger, ggtree, phylobase, RNeXML, see
+\url{https://cran.r-project.org/web/views/Phylogenetics.html} for a
+comprehensive list). Furthermore, \texttt{rotl} joins a growing list of R
+packages that aim at accessing data from the web.
 
 
-\section{Services provided by OTL}
+\section{API services provided by OTL}
 
 The OTL project provides four resources that serve data to users through the
-API:
+APIs:
 
 \begin{enumerate}
 \item The \emph{taxonomy} used as the backbone from the tree, the Open Tree
@@ -217,15 +218,15 @@ API:
   curators to assemble the synthetic tree;
 \item A \emph{taxonomic name resolution service} (TNRS) used to match taxon
   names to the Open Tree Taxonomy identifiers;
-\item The \emph{synthetic tree} itself (the Open Tree).
+\item The \emph{synthetic tree} itself, the Open Tree.
 \end{enumerate}
 
 Additionally, the project provides access to other data, the Graph of Life, that
-stores information about the underlying tree alignment graphs \cite{Smith2013}
+stores information about the underlying tree alignment graphs \citep{Smith2013}
 used to synthesize the various sources of information from which the Open Tree
-is assembled from. Data from this API endpoint is not intended for normal users
-and its use will not be demonstrated in this paper but \texttt{rotl} has
-functions to retrieve data it provides.
+is assembled from. Data from this API is not intended for normal users, and its
+use will not be demonstrated in this paper but \texttt{rotl} has functions to
+retrieve data it provides.
 
 \texttt{rotl} gives users access to all endpoints provided by version 2 of the
 OTL's APIs. Phylogenetic trees served by the API can be imported directly into
@@ -237,8 +238,8 @@ to be imported in other programs that can read in phylogenetic tree files.
 
 The synthetic tree currently does not have any branch lengths associated with
 it, therefore parametric comparative methods cannot be used directly on the
-trees returned by the API. However, resources and methods are being developed to
-add branch lengths information to these topological trees
+trees returned by OTL. However, resources and methods are being developed to add
+branch lengths information to these topological trees
 \citep[e.g.,][]{Ksepka2015} or use topological trees to identify
 phylogenetically equivalent species to increase overlap between chronograms and
 species trait data \citep{Pennell2015}. Without branch lengths, these trees
@@ -255,7 +256,7 @@ Phylogenetic information retrieved from OTL is converted into
 \texttt{ape::phylo} objects by \texttt{rotl} using the NEXUS Class Library
 \citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
 \url{https://cran.r-project.org/package=rncl}. Using NCL provides robust and
-efficient parsing of large trees that may contain singletons nodes labeled with
+efficient parsing of large trees that may contain singleton nodes labeled with
 taxonomic information.
 
 \section{Demonstrations}
@@ -299,12 +300,12 @@ matched, however, as the Open Tree Taxonomy includes taxa from bacteria, plants,
 and animals that are regulated by different nomenclatural codes (ICNP, ICN and
 ICZN respectively), OTL and \texttt{rotl} provide tools to deal with potential
 hemihomonyms. The argument \texttt{context\_name} can be used to limit potential
-matches to a taxonomic group (see the function \texttt{tnrs_contexts} for a list
+matches to a taxonomic group (see the function \texttt{tnrs\_contexts} for a list
 of possible options).  When this strategy cannot be used in case the tree
 encompasses multiple domains (as in the present example), the function
 \texttt{inspect} lists alternative matches for a taxon name, and \texttt{update}
 replaces it in the results. An example of this approach is provided in the
-vignette ``How to use rotl?'' that accompanies the package.
+vignette ``How to use \texttt{rotl}?'' that accompanies the package.
 
 By default, approximate matching is enabled when attempting to match taxonomic
 names to their Open Tree Taxonomy identifiers. Additionally, taxonomic synonyms
@@ -368,8 +369,8 @@ plot(cat_tree, label.offset=.0001, cex=.75, no.margin=TRUE)
 
 When more than one tree is available for a given study, the function
 \texttt{list\_trees} returns a list containing the tree identifiers for each
-study easily. Alternatively, the function \texttt{get\_study} returns all the
-trees (by default as \texttt{ape::phylo} objects) associated with a particular
+study. Alternatively, the function \texttt{get\_study} returns all the trees (by
+default as \texttt{ape::phylo} objects) associated with a particular
 study. Additional details about the study (i.e., its metadata) can be obtained
 using the function \texttt{get\_study\_meta}.
 
@@ -386,12 +387,12 @@ accessible using APIs, many R packages have been developed to take advantage of
 these datasets, especially spearheaded by the organization rOpenSci
 \url{https://ropensci.org}. \texttt{rotl} contributes to these initiatives and
 data from OTL can be combined with other sources easily. For instance in
-Figure~\ref{cat_map}, we show how we can obtain a map of the occurrences for
+Figure~\ref{fig:cat_map}, we show how we can obtain a map of the occurrences for
 some of the cat species (genus \textit{Lynx}) included in the phylogeny above
 using records for these species found in GBIF (code is available in
 supplementary material).
 
-<<cat_map, echo=FALSE, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}'>>=
+<<cat_map, fig.height=4.2, echo=FALSE, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}'>>=
 
 suppressPackageStartupMessages(library(rgbif))
 suppressPackageStartupMessages(library(ggplot2))
@@ -411,6 +412,9 @@ lynx_loc <- occ_search(taxonKey = gbif_keys, limit = 500,
 lynx_loc <- do.call("rbind", lynx_loc)
 lynx_loc[["decimalLatitude"]] <- as.numeric(lynx_loc[["decimalLatitude"]])
 lynx_loc[["decimalLongitude"]] <- as.numeric(lynx_loc[["decimalLongitude"]])
+lynx_loc[lynx_loc[["decimalLatitude"]] == 0 &
+         lynx_loc[["decimalLongitude"]] == 0,
+         c("decimalLatitude","decimalLongitude")] <- c(NA, NA)
 lynx_loc <- lynx_loc[complete.cases(lynx_loc), ]
 
 names(lynx_loc)[1] <- "Species"
