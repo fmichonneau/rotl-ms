@@ -5,18 +5,15 @@ manuscript_tex:= $(manuscript_name).tex
 manuscript_bib = rotl-manuscript.bib
 manuscript_pdf:= $(manuscript_name).pdf
 
-all: $(manuscript_tex) $(manuscript_bib) clean-partial
+all: $(manuscript_tex) clean-partial
+	-cp ~/Library/$(manuscript_bib) .
 	-xelatex -interaction=nonstopmode "\input" $<
 	-bibtex $(manuscript_name)
 	-xelatex -interaction=nonstopmode "\input" $<
 	xelatex -interaction=nonstopmode "\input" $<
-	-rm $(manuscript_bib)
 
 $(manuscript_tex): $(manuscript_src)
 	Rscript -e "knitr::knit('$<')"
-
-$(manuscript_bib):
-	-cp ~/Library/$(manuscript_bib) .
 
 clean-partial:
 	-rm *.bbl
