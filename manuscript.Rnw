@@ -259,7 +259,7 @@ Phylogenetic information retrieved from OTL is converted into
 \citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
 \url{https://cran.r-project.org/package=rncl}. Using NCL provides robust and
 efficient parsing of large trees that may contain singleton nodes labeled with
-taxonomic information.
+taxonomic information (i.e., monotypic taxon).
 
 \section{Demonstrations}
 \label{sec:demonstrations}
@@ -296,18 +296,19 @@ taxa <- tnrs_match_names(names = c("Escherichia colli",
 @
 
 The function \texttt{tnrs\_match\_names} returns a data frame that lists the
-Open Tree identifiers as well as other information to help users to ensure that
-the taxa matched are the correct ones. Here, there is no ambiguity in the taxa
+Open Tree identifiers as well as other information to help users ensure that the
+taxa matched are the correct ones. Here, there is no ambiguity in the taxa
 matched, however, as the Open Tree Taxonomy includes taxa from bacteria, plants,
 and animals that are regulated by different nomenclatural codes (ICNP, ICN and
 ICZN respectively), OTL and \texttt{rotl} provide tools to deal with potential
 hemihomonyms. The argument \texttt{context\_name} can be used to limit potential
-matches to a taxonomic group (see the function \texttt{tnrs\_contexts} for a list
-of possible options).  When this strategy cannot be used in case the tree
-encompasses multiple domains (as in the present example), the function
-\texttt{inspect} lists alternative matches for a taxon name, and \texttt{update}
-replaces it in the results. An example of this approach is provided in the
-vignette ``How to use \texttt{rotl}?'' that accompanies the package.
+matches to a taxonomic group such as ``Animals'' (see the function
+\texttt{tnrs\_contexts} for a list of possible options).  When this strategy
+cannot be used in case the tree encompasses multiple domains (as in the present
+example), the function \texttt{inspect} lists alternative matches for a taxon
+name, and \texttt{update} replaces it in the results. An example of this
+approach is provided in the vignette ``How to use \texttt{rotl}?'' that
+accompanies the package.
 
 By default, approximate matching is enabled when attempting to match taxonomic
 names to their Open Tree Taxonomy identifiers. Additionally, taxonomic synonyms
@@ -341,7 +342,7 @@ available through the output of the function
 \texttt{studies\_properties}. Typically, users will want to search for studies
 or trees based on taxon names (or their Open Taxonomy identifiers), but other
 criteria such as the title of the publication can be used. Here we demonstrate
-how to look for and retrieve a tree for study focusing on the family Felidae
+how to look for and retrieve a tree for studies focusing on the family Felidae
 (Figure~\ref{fig:plot_cats}).
 
 <<get_cats, fig.cap="Tree from \\cite{} obtained from OTL">>=
@@ -385,7 +386,7 @@ evolutionary biology. As many methods for comparative analyses are implemented,
 and because it is a relatively easy to use programming language, R greatly
 facilitates the analysis of large datasets, and allows researchers to combine
 methods in novel ways. Additionally, as more data is made available online and
-accessible using APIs, many R packages have been developed to take advantage of
+accessible using APIs, several R packages have been developed to take advantage of
 these datasets, especially spearheaded by the organization rOpenSci
 \url{https://ropensci.org}. \texttt{rotl} contributes to these initiatives and
 data from OTL can be combined with other sources easily. For instance in
