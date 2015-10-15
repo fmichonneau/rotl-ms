@@ -396,22 +396,26 @@ using records for these species found in GBIF (code is available in
 supplementary material).
 
 <<cat_map, fig.height=4.2, echo=FALSE, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}'>>=
-
+## load required packages
 suppressPackageStartupMessages(library(rgbif))
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(maps))
 
+## Find the species of Lynx in the phylogeny
 cat_species <- cat_tree$tip.label
 lynx_species <- grep("^Lynx", cat_tree$tip.label, value = TRUE)
 
+## Match the Lynx species to the GBIF identifiers
 gbif_keys <- sapply(lynx_species,
                     function(x) name_backbone(name = x)$speciesKey,
                     USE.NAMES = FALSE)
 
+## Search for the GBIF records for these species
 lynx_loc <- occ_search(taxonKey = gbif_keys, limit = 500,
                        return = "data", fields = "minimal",
                        hasCoordinate = TRUE)
 
+## Make a data frame of the results, and clean up the data with missing locality data
 lynx_loc <- do.call("rbind", lynx_loc)
 lynx_loc[["decimalLatitude"]] <- as.numeric(lynx_loc[["decimalLatitude"]])
 lynx_loc[["decimalLongitude"]] <- as.numeric(lynx_loc[["decimalLongitude"]])
@@ -422,6 +426,7 @@ lynx_loc <- lynx_loc[complete.cases(lynx_loc), ]
 
 names(lynx_loc)[1] <- "Species"
 
+## Draw the map
 world <- map_data("world")
 
 ggplot(lynx_loc) +
