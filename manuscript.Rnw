@@ -194,16 +194,18 @@ material, develop outreach activities to explore relationships among species).
 The Open Tree of Life project provides a web interface to explore, query and
 download parts of the synthetic Open Tree
 (\url{http://tree.opentreeoflife.org}). Additionally, the project provides
-Application Programming Interfaces (APIs) to the different services to work
-programmatically with the underlying data. Here, we present \texttt{rotl} an R
-package to interact with OTL's APIs using R syntax to search for, and import
-phylogenetic trees and taxonomic information into R. Having access to this data
-directly in R allows researchers to take advantage of the multiple packages that
-are available to visualize, analyze and manipulate phylogenetic and comparative
-data (e.g., ape, phytools, geiger, ggtree, phylobase, RNeXML, see
+Application Programming Interfaces (APIs) to access programmatically the
+different services and underlying data. Here, we present \texttt{rotl} a package
+to interact with OTL's APIs to search for and import phylogenetic trees and
+taxonomic information directly in R. Having access to this data in R allows
+researchers to take advantage of the multiple packages that are available to
+visualize, analyze and manipulate phylogenetic and comparative data (e.g., ape
+\citealt{Paradis2004}, phytools \citealt{Revell2012}, geiger
+\citealt{Pennell2014-geiger}, ggtree \citealt{Yu-ggtree}, phylobase
+\citealt{phylobase-0.8.0}, RNeXML \citealt{Boettiger2015}, see
 \url{https://cran.r-project.org/web/views/Phylogenetics.html} for a
-comprehensive list). Furthermore, \texttt{rotl} joins a growing list of R
-packages that aim at accessing data from the web.
+comprehensive list). Furthermore, \texttt{rotl} joins a growing list of packages
+that aim at querying and accessing data from the web directly in R for analysis.
 
 
 \section{API services provided by OTL}
