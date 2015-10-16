@@ -287,14 +287,14 @@ requested taxa.
 To illustrate how to obtain relationships from a set of taxa, we will rely on
 OTL to draw a phylogenetic tree for a set of model organisms.
 
-<<init, echo=FALSE>>=
+<<init, echo=FALSE, purl=FALSE>>=
 library(rotl)
 @
 
 First, we use the function \texttt{tnrs\_match\_names} to match the taxon names to
 their Open Taxonomy identifiers.
 
-<<get_taxa, cache=TRUE>>=
+<<get_taxa, cache=TRUE, purl=FALSE>>=
 taxa <- tnrs_match_names(names = c("Escherichia colli",
                                    "Chlamydomonas reinhardtii",
                                    "Drosophila melanogaster",
@@ -336,7 +336,7 @@ them to the function \texttt{tol\_induced\_subtree} to retrieve the
 relationships among these taxa. In turn, the tree can be plotted directly as it
 is returned as an \texttt{ape::phylo} object (Figure~\ref{fig:plot_taxa}).
 
-<<plot_taxa, fig.height=4, cache=TRUE, fig.cap="The phylogenetic tree returned by OTL for the list of model species used as an example.">>=
+<<plot_taxa, fig.height=4, cache=TRUE, purl=FALSE, fig.cap="The phylogenetic tree returned by OTL for the list of model species used as an example.">>=
 tree <- tol_induced_subtree(ott_ids = taxa[["ott_id"]])
 plot(tree, cex=.8, label.offset=.1, no.margin=TRUE)
 @
@@ -369,17 +369,17 @@ single tree is associated with it. We can then retrieve the study and tree
 identifiers, and pass them to the function \texttt{get\_study\_tree} to have the
 tree in memory:
 
-<<get_cat_tree, results='hide'>>=
+<<get_cat_tree, purl=FALSE, results='hide'>>=
 cat_tree <- get_study_tree(study_id = cat_studies[["study_ids"]][1],
                            tree_id = cat_studies[["tree_ids"]][1])
 cat_tree
 @
 
-<<print_cat_tree, echo=FALSE>>=
+<<print_cat_tree, purl=FALSE, echo=FALSE>>=
 print(cat_tree, printlen = 4)
 @
 
-<<plot_cats, fig.height=4.2, echo=FALSE, fig.cap='Phylogeny of the Felidae published in \\citealt{Johnson2006} and retrieved from OTL using \\texttt{rotl}'>>=
+<<plot_cats, purl=FALSE, fig.height=4.2, echo=FALSE, fig.cap='Phylogeny of the Felidae published in \\citealt{Johnson2006} and retrieved from OTL using \\texttt{rotl}'>>=
 plot(cat_tree, label.offset=.0001, cex=.75, no.margin=TRUE)
 @
 
@@ -413,9 +413,9 @@ in the package vignette ``Data mashups''.
 
 <<cat_map, purl=TRUE, echo=FALSE, size='small', fig.height=4.2, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}'>>=
 ## load required packages
-suppressPackageStartupMessages(library(rgbif))
-suppressPackageStartupMessages(library(ggplot2))
-suppressPackageStartupMessages(library(maps))
+library(rgbif)
+library(ggplot2)
+library(maps)
 
 ## Find the species of Lynx in the phylogeny
 cat_species <- cat_tree$tip.label
@@ -431,16 +431,17 @@ lynx_loc <- occ_search(taxonKey = gbif_keys, limit = 500,
                        return = "data", fields = "minimal",
                        hasCoordinate = TRUE)
 
-## Make a data frame of the results, and clean up the data with missing locality data
+## Make a data frame of the results
 lynx_loc <- do.call("rbind", lynx_loc)
+names(lynx_loc)[1] <- "Species"
+
+## Clean up the data with missing locality data
 lynx_loc[["decimalLatitude"]] <- as.numeric(lynx_loc[["decimalLatitude"]])
 lynx_loc[["decimalLongitude"]] <- as.numeric(lynx_loc[["decimalLongitude"]])
 lynx_loc[lynx_loc[["decimalLatitude"]] == 0 &
          lynx_loc[["decimalLongitude"]] == 0,
          c("decimalLatitude","decimalLongitude")] <- c(NA, NA)
 lynx_loc <- lynx_loc[complete.cases(lynx_loc), ]
-
-names(lynx_loc)[1] <- "Species"
 
 ## Draw the map
 world <- map_data("world")
