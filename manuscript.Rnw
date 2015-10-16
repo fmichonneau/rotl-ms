@@ -493,8 +493,13 @@ with the OTL APIs are also available.
 \section{Acknowledgments}
 \label{sec:acknowledgments}
 
-* OpenTree of Life hackathon
-* Scott Chamberlain for code review.
+We would like to thank the organizers of the OpenTree of Life APIs hackathon
+that was held at the University of Michigan, Ann Arbor, September 15-19, 2014,
+where the development of \texttt{rotl} was started. We would also like to thank
+Scott Chamberlain (rOpenSci) for providing a thorough code review. FM was
+supported by iDigBio, and therefore this material is based upon work supported
+by the National Science Foundation’s Advancing Digitization of Biodiversity
+Collections Program (Cooperative Agreement EF-1115210)
 
 \bibliographystyle{sysbio}
 
