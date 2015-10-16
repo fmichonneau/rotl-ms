@@ -454,14 +454,27 @@ ggplot(lynx_loc) +
 
 
 
-\section{Conclusion}
+\section{Concluding remarks}
 \label{sec:conclusion}
 
-Resource as useful as the data that is in it. To make data available, it needs
-to follow conventions so it can be incorporated into the OTL, i.e., submit tree
-files (not images) to public repositories.
+The recognition of the importance of phylogenies to account for the statistical
+non-independence of species in comparative methods, and the recent development
+of methods to explore trait evolution or changes in diversification rates have
+driven the need for accurate phylogenies. However, there is often a discrepancy
+between taxa targeted by comparative methods, and taxa for which phylogenies are
+available. We believe that by providing an easy-to-use interface to obtain
+phylogenies for an arbitrary set of taxa directly in R, \texttt{rotl} will be
+useful in a wide variety of contexts.
 
-OTL provides an easy-to-use interface to submit studies.
+The accuracy and usefulness of the data provided by OTL relies on the community
+to make generated phylogenies (and their metadata) digitally available as tree
+files (i.e., Newick, NEXUS or NeXML). We strongly encourage researchers to
+submit their published phylogenies to OTL using the curator interface
+\url{https://tree.opentreeoflife.org/curator}. By facilitating the discovery and
+re-use of published trees and of the synthetic tree, we hope \texttt{rotl} will
+contribute to the wider adoption of best practices to make phylogenetic
+information available and re-usable.
+
 
 \section{Availability}
 \label{sec:availability}
