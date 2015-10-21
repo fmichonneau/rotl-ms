@@ -7,7 +7,7 @@ manuscript_pdf:= $(manuscript_name).pdf
 manuscript_app:= $(manuscript_name)-appendix.pdf
 
 all: $(manuscript_tex) clean-partial appendix
-	-cp ~/Library/$(manuscript_bib) .
+#	cp ~/Library/$(manuscript_bib) .
 	-xelatex -interaction=nonstopmode "\input" $<
 	-bibtex $(manuscript_name)
 	-xelatex -interaction=nonstopmode "\input" $<
@@ -38,3 +38,8 @@ clean: clean-partial
 	-rm $(manuscript_pdf)
 	-rm $(manuscript_tex)
 	-rm $(manuscript_app)
+
+clear-cache:
+	- rm -rf ./cache
+	- Rscript -e "install.packages(c('rgbif', 'mapproj'), quiet=TRUE)"
+
