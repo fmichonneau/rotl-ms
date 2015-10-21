@@ -1,150 +1,93 @@
 
 \documentclass[12pt,letterpaper]{article}
 
-%%%%% packages provided by sys bio template
-\usepackage{fixltx2e}
-\usepackage{textcomp}
-\usepackage{fullpage}
-\usepackage{amsfonts}
-\usepackage{verbatim}
-%% \usepackage[english]{babel} %% I use polyglossia instead
-%% not needed: \usepackage{pifont}
-\usepackage{color}
-\usepackage{setspace}
-\usepackage{lscape}
-\usepackage{indentfirst}
-\usepackage[normalem]{ulem}
-\usepackage{booktabs}
-%\usepackage{nag}
-\usepackage{natbib}
-%\usepackage{bibtex}
-\usepackage{float}
-\usepackage{latexsym}
-%\usepackage{hyperref}
-\usepackage{url}
-%\usepackage{html}
-\usepackage{hyperref}
-\usepackage{epsfig}
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{bm}
-\usepackage{array}
-%\usepackage{mhchem}
-\usepackage{ifthen}
-%% I am already using it: \usepackage{caption}
-\usepackage{hyperref}
-%\usepackage{xcolor}
-\usepackage{amsthm}
-\usepackage{amstext}
-%%%%
+%%%%% packages provided by sys bio template \usepackage{fixltx2e}
+\usepackage{textcomp} \usepackage{fullpage} \usepackage{amsfonts}
+\usepackage{verbatim} %% \usepackage[english]{babel} %% I use polyglossia
+instead %% not needed: \usepackage{pifont} \usepackage{color}
+\usepackage{setspace} \usepackage{lscape} \usepackage{indentfirst}
+\usepackage[normalem]{ulem} \usepackage{booktabs} %\usepackage{nag}
+\usepackage{natbib} %\usepackage{bibtex} \usepackage{float}
+\usepackage{latexsym} %\usepackage{hyperref} \usepackage{url} %\usepackage{html}
+\usepackage{hyperref} \usepackage{epsfig} \usepackage{graphicx}
+\usepackage{amssymb} \usepackage{amsmath} \usepackage{bm} \usepackage{array}
+%\usepackage{mhchem} \usepackage{ifthen} %% I am already using it:
+\usepackage{caption} \usepackage{hyperref} %\usepackage{xcolor}
+\usepackage{amsthm} \usepackage{amstext} %%%%
 
 
 % line numbers
-\usepackage{lineno}
-\modulolinenumbers[5]
-\linenumbers
+\usepackage{lineno} \modulolinenumbers[5] \linenumbers
 
-\usepackage{natbib}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage[margin=1in]{geometry}
-\usepackage[font=sf]{caption}
+\usepackage{natbib} \usepackage[T1]{fontenc} \usepackage{graphicx}
+\usepackage[margin=1in]{geometry} \usepackage[font=sf]{caption}
 
 % Latex special characters are rendered correctly with XeTeX
-\usepackage{xltxtra}
-\usepackage{xunicode}
+\usepackage{xltxtra} \usepackage{xunicode}
 \defaultfontfeatures{Mapping=tex-text}
 
 % Words are cut where needed
-\usepackage{polyglossia}
-\setdefaultlanguage[variant=american]{english}
+\usepackage{polyglossia} \setdefaultlanguage[variant=american]{english}
 
 % Use fancy fonts
-\usepackage{fontspec}
-\setmainfont[Mapping=tex-text]{Crimson Text}
+\usepackage{fontspec} \setmainfont[Mapping=tex-text]{Crimson Text}
 \setsansfont{SourceSansPro-Regular}
 
-%%% syst bio options
-\linespread{1.66}
-% All text should be double-spaced
-% with occasional exceptions for tables.
-\raggedright
-\setlength{\parindent}{0.5in}
+%%% syst bio options \linespread{1.66}
+% All text should be double-spaced with occasional exceptions for tables.
+\raggedright \setlength{\parindent}{0.5in}
 
 \setcounter{secnumdepth}{0}
 
-% Our sections are not numbered and our papers do not have
-% Tables of Contents. We don't
-% present a list of figures or list of tables, either.
+% Our sections are not numbered and our papers do not have Tables of Contents.
+% We don't present a list of figures or list of tables, either.
 
-% Any common font is fine.
-% (A common sans-serif font should be used on figures, but figures should be
-% separate from the LaTeX document.)
+% Any common font is fine.  (A common sans-serif font should be used on figures,
+% but figures should be separate from the LaTeX document.)
 
 \pagestyle{empty}
 
-\renewcommand{\section}[1]{%
-\bigskip
-\begin{center}
-\begin{Large}
-\normalfont\scshape #1
-\medskip
-\end{Large}
-\end{center}}
+\renewcommand{\section}[1]{% \bigskip \begin{center} \begin{Large}
+        \normalfont\scshape #1 \medskip \end{Large} \end{center}}
 
-\renewcommand{\subsection}[1]{%
-\bigskip
-\begin{center}
-\begin{large}
-\normalfont\itshape #1
-\end{large}
-\end{center}}
+\renewcommand{\subsection}[1]{% \bigskip \begin{center} \begin{large}
+        \normalfont\itshape #1 \end{large} \end{center}}
 
-\renewcommand{\subsubsection}[1]{%
-\vspace{2ex}
-\noindent
-\textit{#1.}---}
+\renewcommand{\subsubsection}[1]{% \vspace{2ex} \noindent \textit{#1.}---}
 
 \renewcommand{\tableofcontents}{}
 
-\bibpunct{(}{)}{;}{a}{}{,}  % this is a citation format command for natbib
-%%% end syst bio options
+\bibpunct{(}{)}{;}{a}{}{,}  % this is a citation format command for natbib %%%
+end syst bio options
 
 
-\newcolumntype{b}{X}
-\newcolumntype{s}{>{\hsize=.2\hsize}X}
+\newcolumntype{b}{X} \newcolumntype{s}{>{\hsize=.2\hsize}X}
 
-% ----------------------------------------------------------------------------- %
+% -----------------------------------------------------------------------------
+% %
 
 \begin{document}
 
-\begin{flushright}
-Version dated: \today
-\end{flushright}
+\begin{flushright} Version dated: \today \end{flushright}
 
-\bigskip
-\noindent AN R PACKAGE TO INTERACT WITH THE OPEN TREE OF LIFE
+\bigskip \noindent AN R PACKAGE TO INTERACT WITH THE OPEN TREE OF LIFE
 
-\bigskip
-\medskip
+\bigskip \medskip
 
-\begin{center}
-  \noindent{\Large \bf \texttt{rotl} an R package to interact with the Open Tree
-    of Life Data}
+\begin{center} \noindent{\Large \bf \texttt{rotl} an R package to interact with
+the Open Tree of Life Data}
 
 \bigskip
 
-\noindent{\normalsize \sc Fran\c{c}ois Michonneau$^{1,2}$, Joseph Brown$^3$, David Winter$^4$}\\
+\noindent{\normalsize \sc Fran\c{c}ois Michonneau$^{1,2}$, Joseph Brown$^3$,
+David Winter$^4$}\\
 
 \noindent {\small \it $^1$ Whitney Laboratory for Marine Sciences, University of
-  Florida, St. Augustine, FL, USA}\\
-\noindent {\small \it $^2$Florida Museum of Natural History, University of
-  Florida, Gainesville, FL, USA} \\
+Florida, St. Augustine, FL, USA}\\ \noindent {\small \it $^2$Florida Museum of
+Natural History, University of Florida, Gainesville, FL, USA} \\
 \noindent{\small \it $^3$University of Michigan, Ann Arbor, MI, USA} \\
 \noindent{\small \it $^4$Arizona State University, Tempe, AZ, USA} \\
-\end{center}
-\medskip
+\end{center} \medskip
 
 \noindent{\bf Corresponding author:} Fran\c{c}ois Michonneau, Division of
 Invertebrate Zoology, Florida Museum of Natural History, Gainesville, FL
@@ -171,19 +114,29 @@ manipulate, analyze and visualize phylogenies.
 
 \vspace{1.5in}
 
-Generating phylogenies has been greatly facilitated by advances in sequencing
-and computing technologies. In parallel, new phylogenetic comparative methods
-have been developed and make use of these phylogenies to explore fundamental
-questions about the origin of biodiversity including the evolution of
-morphological and ecological traits, the spatio-temporal variation in speciation
-rates, or both \citep{OMeara2012,Pennell2013}. The development of these methods
-has contributed to the need for a greater availability of high-quality
-phylogenetic information across life. However, phylogenetic information is
-scattered, often only available as image files within publications, and the lack
-of standardization to store and represent phylogenetic data makes it difficult
-for researchers to access, synthesize, and integrate this information into their
-own research (\citealt{Stoltzfus2012}, but see \citealt{Cranston2014} for
-suggestions of best practices).
+
+
+Advances in sequencing and computing technologies have lead to a revolution in
+systematic biology. The ability to routinely generate molecular datasets from
+any extant organism has allowed researchers to resolve long-running taxonomic
+disputes and estimate phylogenies for previously understudied groups. In
+parallel, the ease which which phylogenies can be estimated has lead to the
+development of new phylogenetic comparative methods. These methods allow
+researchers to explore fundamental questions about the origin of biodiversity
+including the evolution of morphological and ecological traits, the
+spatio-temporal variation in speciation rates, or both
+\citep{OMeara2012,Pennell2013}. 
+
+Ideally, the ever increasing number of published phylogenies would contribute to
+a synthesis of phylogenetic knowledge -- leading to a better understanding of
+the history of life and providing high-quality phylogenetic information for use
+in comparative methods. However, in practice synthesizing phylogenetic data
+remains difficult. Phylogenies are scattered, often only available as image
+files within publications, and the lack of standardization to store and
+represent phylogenetic data makes it difficult for researchers to access,
+synthesize, and integrate this information into their own research
+(\citealt{Stoltzfus2012}, but see \citealt{Cranston2014} for suggestions of best
+practices).
 
 The Open Tree of Life (OTL) project aims at assembling and synthesizing our
 current understanding of phylogenetic relationships across all organisms on
@@ -204,21 +157,28 @@ material, develop outreach activities to explore relationships among species).
 % information for species that have yet to be included in any phylogenetic tree
 % as their position is inferred based on taxonomy.
 
+
 The Open Tree of Life project provides a web interface to explore, query and
-download parts of the synthetic Open Tree
-(\url{http://tree.opentreeoflife.org}). Additionally, the project provides
-Application Programming Interfaces (APIs) to access programmatically the
-different services and underlying data. Here, we present \texttt{rotl} a package
-to interact with OTL's APIs to search for and import phylogenetic trees and
-taxonomic information directly in R. Having access to this data in R allows
+download parts of the synthetic Open Tree (\url{http://tree.opentreeoflife.org})
+and the published trees that contribute to it. Additionally, the project
+provides Application Programming Interfaces (APIs)  to access programmatically
+the different services and underlying data.  Here, we present \texttt{rotl} a
+package to interact with OTL's APIs to search for and import phylogenetic trees
+and taxonomic information directly in R. Having access to this data in R allows
 researchers to take advantage of the multiple packages that are available to
 visualize, analyze and manipulate phylogenetic and comparative data (e.g., ape
-\citealt{Paradis2004}, phytools \citealt{Revell2012}, geiger
+\citealt{Paradis2004}, phytools \citeateu{Revell2012}, geiger
 \citealt{Pennell2014-geiger}, ggtree \citealt{Yu-ggtree}, phylobase
 \citealt{phylobase-0.8.0}, RNeXML \citealt{Boettiger2015}, see
 \url{https://cran.r-project.org/web/views/Phylogenetics.html} for a
-comprehensive list). Furthermore, \texttt{rotl} joins a growing list of packages
-that aim at querying and accessing data from the web directly in R for analysis.
+comprehensive list). There is also a growing list of packages that allow users
+to query and acces data from the web directly in R \hl{rFISHBASE
+10.1111/j.1095-8649.2012.03464.x, paleoDB 10.1111/ecog.01154, rAvis
+10.1371/journal.pone.0091650 \dots}. By providing direct access to high quality
+phylogenetic data in R, \texttt{rotl} fills a key gap typical comparative
+analysis workflows. Moreover, by allowing the gathering, processing and analysis
+of data to be performed programmatically, \texttt{rotl} facilitates reproducible
+research practices. 
 
 
 \section{API services provided by OTL}
@@ -271,7 +231,14 @@ Phylogenetic information retrieved from OTL is converted into
 \citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
 \url{https://cran.r-project.org/package=rncl}. Using NCL provides robust and
 efficient parsing of large trees that may contain singleton nodes labeled with
-taxonomic information (i.e., monotypic taxon).
+taxonomic information (i.e., monotypic taxon). 
+
+The package is well-documented, and includes two package
+vignettes (documents that demonstrate the use of the package and contain executable 
+R code) as well as per-function documentation. There is also an extensive
+test-suite that covers both the internal functions that \textt{rotl} uses to
+connect to OTL and public functions users apply to acess and process data. 
+
 
 \section{Demonstrations}
 \label{sec:demonstrations}
@@ -487,8 +454,9 @@ information available and re-usable.
 BSD license. Stable versions are available from the CRAN repository
 \url{https://cran.r-project.org/package=rotl}, and development
 versions are available from GitHub
-\url{https://github.com/ropensci/rotl}. The source for this manuscript is
-available at \url{https://github.com/fmichonneau/rotl-ms}.
+\url{https://github.com/ropensci/rotl}. The package is under active development,
+and authors welcome bug reports of feature requests via the github repository.
+The source for this manuscript is available at \url{https://github.com/fmichonneau/rotl-ms}.
 
 Python \url{https://github.com/OpenTreeOfLife/pyopentree} and Ruby
 \url{https://github.com/SpeciesFileGroup/bark} libraries to interact
