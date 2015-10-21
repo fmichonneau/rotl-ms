@@ -1,0 +1,629 @@
+
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL manuscript.tex   Wed Oct 21 11:49:46 2015
+%DIF ADD old.tex          Wed Oct 21 11:49:31 2015
+\documentclass[12pt,letterpaper]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+%%%%% packages provided by sys bio template
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+%% \usepackage[english]{babel} %% I use polyglossia instead
+%% not needed: \usepackage{pifont}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{indentfirst}
+\usepackage[normalem]{ulem}
+\usepackage{booktabs}
+%\usepackage{nag}
+\usepackage{natbib}
+%\usepackage{bibtex}
+\usepackage{float}
+\usepackage{latexsym}
+%\usepackage{hyperref}
+\usepackage{url}
+%\usepackage{html}
+\usepackage{hyperref}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{array}
+%\usepackage{mhchem}
+\usepackage{ifthen}
+%% I am already using it: \usepackage{caption}
+\usepackage{hyperref}
+%\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{amstext}
+%%%%
+
+
+% line numbers
+\usepackage{lineno}
+\modulolinenumbers[5]
+\linenumbers
+
+\usepackage{natbib}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage[font=sf]{caption}
+
+% Latex special characters are rendered correctly with XeTeX
+\usepackage{xltxtra}
+\usepackage{xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+% Words are cut where needed
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=american]{english}
+
+% Use fancy fonts
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Crimson Text}
+\setsansfont{SourceSansPro-Regular}
+
+%%% syst bio options
+\linespread{1.66}
+% All text should be double-spaced
+% with occasional exceptions for tables.
+\raggedright
+\setlength{\parindent}{0.5in}
+
+\setcounter{secnumdepth}{0}
+
+% Our sections are not numbered and our papers do not have
+% Tables of Contents. We don't
+% present a list of figures or list of tables, either.
+
+% Any common font is fine.
+% (A common sans-serif font should be used on figures, but figures should be
+% separate from the LaTeX document.)
+
+\pagestyle{empty}
+
+\renewcommand{\section}[1]{%
+\bigskip
+\begin{center}
+\begin{Large}
+\normalfont\scshape #1
+\medskip
+\end{Large}
+\end{center}}
+
+\renewcommand{\subsection}[1]{%
+\bigskip
+\begin{center}
+\begin{large}
+\normalfont\itshape #1
+\end{large}
+\end{center}}
+
+\renewcommand{\subsubsection}[1]{%
+\vspace{2ex}
+\noindent
+\textit{#1.}---}
+
+\renewcommand{\tableofcontents}{}
+
+\bibpunct{(}{)}{;}{a}{}{,}  % this is a citation format command for natbib
+%%% end syst bio options
+
+
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.2\hsize}X}
+
+% ----------------------------------------------------------------------------- %
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\begin{flushright}
+Version dated: \today
+\end{flushright}
+
+\bigskip
+\noindent AN R PACKAGE TO INTERACT WITH THE OPEN TREE OF LIFE
+
+\bigskip
+\medskip
+
+\begin{center}
+  \noindent{\Large \bf \texttt{rotl} an R package to interact with the Open Tree
+    of Life Data}
+
+\bigskip
+
+\noindent{\normalsize \sc Fran\c{c}ois Michonneau$^{1,2}$, Joseph Brown$^3$, David Winter$^4$}\\
+
+\noindent {\small \it $^1$ Whitney Laboratory for Marine Sciences, University of
+  Florida, St. Augustine, FL, USA}\\
+\noindent {\small \it $^2$Florida Museum of Natural History, University of
+  Florida, Gainesville, FL, USA} \\
+\noindent{\small \it $^3$University of Michigan, Ann Arbor, MI, USA} \\
+\noindent{\small \it $^4$Arizona State University, Tempe, AZ, USA} \\
+\end{center}
+\medskip
+
+\noindent{\bf Corresponding author:} Fran\c{c}ois Michonneau, Division of
+Invertebrate Zoology, Florida Museum of Natural History, Gainesville, FL
+32611-7800, USA; E-mail: francois.michonneau@gmail.com\\
+
+
+\vspace{1in}
+
+\subsubsection{Abstract}
+
+While phylogenies have been getting easier to build, it has been difficult to
+re-use, combine and synthesize the information they provide because published
+trees are often only available as image files, and taxonomic information is not
+standardized across studies. The Open Tree of Life (OTL) project addresses these
+issues by providing a digital tree that encompasses all organisms built by
+combining taxonomic information and published phylogenies. The project also
+provides tools and services to query and download parts of this synthetic tree,
+as well as the data used to build it. Here, we present \texttt{rotl}, an R
+package to search and download data from the Open Tree of Life data directly in
+R. \texttt{rotl} uses common data structures allowing researchers to take
+advantage of the rich set of tools and methods that are available in R to
+manipulate, analyze and visualize phylogenies.
+
+
+\vspace{1.5in}
+
+\DIFdelbegin \DIFdel{Advances }\DIFdelend \DIFaddbegin \DIFadd{Generating phylogenies has been greatly facilitated by advances }\DIFaddend in sequencing
+and computing technologies\DIFdelbegin \DIFdel{have lead to a revolution in
+systematic biology. The ability to routinely generate molecular datasets from
+any extant organism has allowed researchers to resolve long-running taxonomic
+disputes and estimate phylogenies for previously understudied groups}\DIFdelend . In parallel, \DIFdelbegin \DIFdel{the ease which which phylogenies can be estimated has lead to the
+development of }\DIFdelend new phylogenetic comparative methods
+\DIFdelbegin \DIFdel{. These methods allow
+researchers }\DIFdelend \DIFaddbegin \DIFadd{have been developed and make use of these phylogenies }\DIFaddend to explore fundamental
+questions about the origin of biodiversity including the evolution of
+morphological and ecological traits, the spatio-temporal variation in speciation
+rates, or both \citep{OMeara2012,Pennell2013}. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Ideally, the ever increasing number of published phylogenies would contribute to
+a synthesis of phylogenetic knowledge -- leading to a better understanding of
+the history of life and providing }\DIFdelend \DIFaddbegin \DIFadd{The development of these methods
+has contributed to the need for a greater availability of }\DIFaddend high-quality
+phylogenetic information \DIFdelbegin \DIFdel{for use
+in comparative methods}\DIFdelend \DIFaddbegin \DIFadd{across life}\DIFaddend . However, \DIFdelbegin \DIFdel{in practice synthesizing phylogenetic data
+remains difficult. Phylogenies are }\DIFdelend \DIFaddbegin \DIFadd{phylogenetic information is
+}\DIFaddend scattered, often only available as image files within publications, and the lack
+of standardization to store and represent phylogenetic data makes it difficult
+for researchers to access, synthesize, and integrate this information into their
+own research (\citealt{Stoltzfus2012}, but see \citealt{Cranston2014} for
+suggestions of best practices).
+
+The Open Tree of Life (OTL) project aims at assembling and synthesizing our
+current understanding of phylogenetic relationships across all organisms on
+Earth \citep{Hinchliff2015}, while providing tools and services that facilitate
+access to this information. OTL combines taxonomic information that serves as
+the backbone for the phylogenetic relationships, and published phylogenies to
+elucidate relationships among taxa. This combination of information is used to
+form the synthetic tree. Studies can be contributed to the synthetic tree
+through the curator interface \url{https://tree.opentreeoflife.org/curator},
+allowing the synthetic tree to be continuously updated as relationships are
+elucidated or reevaluated. The current draft of the Open Tree of Life contains
+2.3 million tips. Beyond obvious applications across the life sciences to
+explore questions in evolution, biodiversity, and conservation, the resources
+OTL provides could be used for education and outreach (e.g., illustrating course
+material, develop outreach activities to explore relationships among species).
+
+% Because of its comprehensive nature, researchers have access to phylogenetic
+% information for species that have yet to be included in any phylogenetic tree
+% as their position is inferred based on taxonomy.
+
+The Open Tree of Life project provides a web interface to explore, query and
+download parts of the synthetic Open Tree
+(\url{http://tree.opentreeoflife.org})\DIFdelbegin \DIFdel{and the published trees that contribute to it}\DIFdelend . Additionally, the project provides
+Application Programming Interfaces (APIs) to access programmatically the
+different services and underlying data. Here, we present \texttt{rotl} a package
+to interact with OTL's APIs to search for and import phylogenetic trees and
+taxonomic information directly in R. Having access to this data in R allows
+researchers to take advantage of the multiple packages that are available to
+visualize, analyze and manipulate phylogenetic and comparative data (e.g., ape
+\citealt{Paradis2004}, phytools \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\citeateu{Revell2012}
+}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\citealt{Revell2012}
+}%DIFAUXCMD
+}\DIFaddend , geiger
+\citealt{Pennell2014-geiger}, ggtree \citealt{Yu-ggtree}, phylobase
+\citealt{phylobase-0.8.0}, RNeXML \citealt{Boettiger2015}, see
+\url{https://cran.r-project.org/web/views/Phylogenetics.html} for a
+comprehensive list). \DIFdelbegin \DIFdel{There is also }\DIFdelend \DIFaddbegin \DIFadd{Furthermore, }\texttt{\DIFadd{rotl}} \DIFadd{joins }\DIFaddend a growing list of packages
+that \DIFdelbegin \DIFdel{allow users
+to query and acces }\DIFdelend \DIFaddbegin \DIFadd{aim at querying and accessing }\DIFaddend data from the web directly in R \DIFdelbegin %DIFDELCMD < \hl{rFISHBASE
+%DIFDELCMD < 10.1111/j.1095-8649.2012.03464.x, paleoDB 10.1111/ecog.01154, rAvis
+%DIFDELCMD < 10.1371/journal.pone.0091650 \dots}%%%
+\DIFdel{. By providing direct access to high quality
+phylogenetic data in R, }\texttt{\DIFdel{rotl}} %DIFAUXCMD
+\DIFdel{fills a key gap typical comparative
+analysis workflows. Moreover, by allowing the gathering, processing and analysisof data to be performed programmatically, }\texttt{\DIFdel{rotl}} %DIFAUXCMD
+\DIFdel{facilitates reproducible
+research practices}\DIFdelend \DIFaddbegin \DIFadd{for analysis}\DIFaddend .
+
+
+\section{API services provided by OTL}
+
+The OTL project provides four resources that serve data to users through the
+APIs:
+
+\begin{enumerate}
+\item The \emph{taxonomy} used as the backbone from the tree, the Open Tree
+  Taxonomy;
+\item The \emph{studies} and their associated trees some of which are chosen by
+  curators to assemble the synthetic tree;
+\item A \emph{taxonomic name resolution service} (TNRS) used to match taxon
+  names to the Open Tree Taxonomy identifiers;
+\item The \emph{synthetic tree} itself, the Open Tree.
+\end{enumerate}
+
+Additionally, the project provides access to other data, the Graph of Life, that
+stores information about the underlying tree alignment graphs \citep{Smith2013}
+used to synthesize the various sources of information from which the Open Tree
+is assembled from. Data from this API is not intended for normal users, and its
+use will not be demonstrated in this paper but \texttt{rotl} has functions to
+retrieve data it provides.
+
+\texttt{rotl} gives users access to all endpoints provided by version 2 of the
+OTL's APIs. Phylogenetic trees served by the API can be imported directly into
+R's memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
+structure (objects of class \texttt{phylo}), or can be written to files in the
+Newick, NEXUS \citep{Maddison1997} or NeXML \citep{Vos2012} file formats. This
+allows researchers to use these trees either directly with other R packages, or
+to be imported in other programs that can read in phylogenetic tree files.
+
+The synthetic tree currently does not have any branch lengths associated with
+it, therefore parametric comparative methods cannot be used directly on the
+trees returned by OTL. However, resources and methods are being developed to add
+branch lengths to these topological trees \citep[e.g.,][]{Ksepka2015} or use
+topological trees to identify phylogenetically equivalent species to increase
+overlap between chronograms and species trait data \citep{Pennell2015}. Without
+branch lengths, these trees are nonetheless useful to illustrate relationships
+among species, or to map a trait on a phylogeny for instance.
+
+%% any examples available?
+
+% Tree versionning? Replicability of analyses
+
+\section{Technical information about \texttt{rotl}}
+
+Phylogenetic information retrieved from OTL is converted into
+\texttt{ape::phylo} objects by \texttt{rotl} using the NEXUS Class Library
+\citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
+\url{https://cran.r-project.org/package=rncl}. Using NCL provides robust and
+efficient parsing of large trees that may contain singleton nodes labeled with
+taxonomic information (i.e., monotypic taxon).
+
+\DIFdelbegin \DIFdel{The package is well-documented, and includes two package
+vignettes (documents that demonstrate the use of the package and contain executable 
+R code) as well as per-function documentation. There is also an extensive
+test-suite that covers both the internal functions that \textt{rotl} uses to
+connect to OTL and public functions users apply to acess and process data. 
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \section{Demonstrations}
+\label{sec:demonstrations}
+
+\subsection{Getting relationships from a list of taxa}
+\label{sec:get-relationships}
+
+To get the relationships among a set of taxa from the Open Tree, the taxa first
+need to be matched against the Open Taxonomy using the TNRS. This step retrieves
+the identifiers that will be used to extract the relationships for the set of
+requested taxa.
+
+To illustrate how to obtain relationships from a set of taxa, we will rely on
+OTL to draw a phylogenetic tree for a set of model organisms.
+
+
+
+First, we use the function \texttt{tnrs\_match\_names} to match the taxon names to
+their Open Taxonomy identifiers.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{taxa} \hlkwb{<-} \hlkwd{tnrs_match_names}\hlstd{(}\hlkwc{names} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"Escherichia colli"}\hlstd{,}
+                                   \hlstr{"Chlamydomonas reinhardtii"}\hlstd{,}
+                                   \hlstr{"Drosophila melanogaster"}\hlstd{,}
+                                   \hlstr{"Arabidopsis thaliana"}\hlstd{,}
+                                   \hlstr{"Rattus norvegicus"}\hlstd{,}
+                                   \hlstr{"Mus musculus"}\hlstd{,}
+                                   \hlstr{"Cavia porcellus"}\hlstd{,}
+                                   \hlstr{"Xenopus laevis"}\hlstd{,}
+                                   \hlstr{"Saccharomyces cervisae"}\hlstd{,}
+                                   \hlstr{"Danio rerio"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+The function \texttt{tnrs\_match\_names} returns a data frame that lists the
+Open Tree identifiers as well as other information to help users ensure that the
+taxa matched are the correct ones. Here, there is no ambiguity in the taxa
+matched, however, as the Open Tree Taxonomy includes taxa from bacteria, plants,
+and animals that are regulated by different nomenclatural codes (ICNP, ICN and
+ICZN respectively), OTL and \texttt{rotl} provide tools to deal with potential
+hemihomonyms. The argument \texttt{context\_name} can be used to limit potential
+matches to a taxonomic group such as ``Animals'' (see the function
+\texttt{tnrs\_contexts} for a list of possible options).  When this strategy
+cannot be used in case the tree encompasses multiple domains (as in the present
+example), the function \texttt{inspect} lists alternative matches for a taxon
+name, and \texttt{update} replaces it in the results. An example of this
+approach is provided in the vignette ``How to use \texttt{rotl}?'' that
+accompanies the package.
+
+By default, approximate matching is enabled when attempting to match taxonomic
+names to their Open Tree Taxonomy identifiers. Additionally, taxonomic synonyms
+are included in the Open Tree Taxonomy allowing researchers to match correct
+identifiers for taxon names that might include misspellings or synonyms. These
+features will facilitate the tedious data cleaning process often needed when
+matching taxon names. In the example provided, both \textit{Escherichia coli}
+and \textit{Saccharomyces cerevisiae} are misspelled but OTL's TNRS finds the
+correct match for these taxa.
+
+Now that the taxon names are matched to the Open Tree identifiers, we can pass
+them to the function \texttt{tol\_induced\_subtree} to retrieve the
+relationships among these taxa. In turn, the tree can be plotted directly as it
+is returned as an \texttt{ape::phylo} object (Figure~\ref{fig:plot_taxa}).
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{tree} \hlkwb{<-} \hlkwd{tol_induced_subtree}\hlstd{(}\hlkwc{ott_ids} \hlstd{= taxa[[}\hlstr{"ott_id"}\hlstd{]])}
+\hlkwd{plot}\hlstd{(tree,} \hlkwc{cex}\hlstd{=}\hlnum{.8}\hlstd{,} \hlkwc{label.offset}\hlstd{=}\hlnum{.1}\hlstd{,} \hlkwc{no.margin}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/plot_taxa-1} \caption[The phylogenetic tree returned by OTL for the list of model species used as an example]{The phylogenetic tree returned by OTL for the list of model species used as an example.}\label{fig:plot_taxa}
+\end{figure}
+
+
+\end{knitrout}
+
+\subsection{Getting trees from studies}
+\label{sec:get-tree-study}
+
+\texttt{rotl} can also be used to retrieve trees accompanying studies that have
+been submitted through the curator interface, and identify the trees that
+contribute to the synthetic tree. These trees provide a useful resource to
+reproduce or expand on an already published analysis, or to explore how the
+elucidation of relationships within a clade has changed through time.
+
+Criteria that can be used to search for studies or their associated trees are
+available through the output of the function
+\texttt{studies\_properties}. Typically, users will want to search for studies
+or trees based on taxon names (or their Open Taxonomy identifiers), but other
+criteria such as the title of the publication can be used. Here we demonstrate
+how to look for and retrieve a tree for studies focusing on the family Felidae
+(Figure~\ref{fig:plot_cats}).
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{cat_studies} \hlkwb{<-} \hlkwd{studies_find_studies}\hlstd{(}\hlkwc{property} \hlstd{=} \hlstr{"ot:focalCladeOTTTaxonName"}\hlstd{,}
+                                    \hlkwc{value} \hlstd{=} \hlstr{"felidae"}\hlstd{)}
+\hlstd{cat_studies}
+\end{alltt}
+\begin{verbatim}
+##   study_ids n_trees tree_ids candidate study_year
+## 1   pg_1981       1 tree4052  tree4052       2006
+##                                                                title
+## 1 The late Miocene radiation of modern Felidae: a genetic assessment
+##                                   study_doi
+## 1 http://dx.doi.org/10.1126/science.1122277
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Currently only one study focused on this family is available from OTL, and a
+single tree is associated with it. We can then retrieve the study and tree
+identifiers, and pass them to the function \texttt{get\_study\_tree} to have the
+tree in memory:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{cat_tree} \hlkwb{<-} \hlkwd{get_study_tree}\hlstd{(}\hlkwc{study_id} \hlstd{= cat_studies[[}\hlstr{"study_ids"}\hlstd{]][}\hlnum{1}\hlstd{],}
+                           \hlkwc{tree_id} \hlstd{= cat_studies[[}\hlstr{"tree_ids"}\hlstd{]][}\hlnum{1}\hlstd{])}
+\hlstd{cat_tree}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## 
+## Phylogenetic tree with 38 tips and 37 internal nodes.
+## 
+## Tip labels:
+## 	Neofelis_nebulosa, Panthera_tigris, Panthera_uncia, Panthera_pardus, ...
+## 
+## Rooted; includes branch lengths.
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/plot_cats-1} \caption[Phylogeny of the Felidae published in \citealt{Johnson2006} and retrieved from OTL using \texttt{rotl}]{Phylogeny of the Felidae published in \citealt{Johnson2006} and retrieved from OTL using \texttt{rotl}}\label{fig:plot_cats}
+\end{figure}
+
+
+\end{knitrout}
+
+When more than one tree is available for a given study, the function
+\texttt{list\_trees} returns a list containing the tree identifiers for each
+study. Alternatively, the function \texttt{get\_study} returns all the trees (by
+default as \texttt{ape::phylo} objects) associated with a particular
+study. Additional details about the study (i.e., its metadata) can be obtained
+using the function \texttt{get\_study\_meta}.
+
+
+\subsection{How does \texttt{rotl} fit into the R package ecosystem?}
+\label{sec:how-does-rotl-fit}
+
+In recent years, R has become part of the toolbox of many researchers in
+evolutionary biology. R greatly facilitates the analysis of large datasets, and
+allows researchers to combine methods in novel ways because many methods for
+comparative analyses are implemented, and because it is a relatively easy to use
+programming language. Additionally, as more data is made available online and
+accessible using APIs, several packages have been developed to interact and
+download these datasets directly in R enabling direct and reproducible analyses.
+Notably, the organization rOpenSci \url{https://ropensci.org} has fostered a
+community of researchers who develop tools and methods to facilitate the use of
+open data and broaden the adoption of open science practices in
+general. \texttt{rotl} contributes to this initiative, and data from OTL can be
+combined with other sources easily. For instance in Figure~\ref{fig:cat_map}, we
+show how we can obtain a map of the occurrences for some of the cat species
+(genus \textit{Lynx}) included in the phylogeny above using records for these
+species found in GBIF (code available in Appendix). Another example is available
+in the package vignette ``Data mashups''.
+
+\begin{knitrout}\small
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/cat_map-1} \caption[GBIF records for the species in \textit{Lynx} included in the phylogeny associated with the study by \citealt{Johnson2006}]{GBIF records for the species in \textit{Lynx} included in the phylogeny associated with the study by \citealt{Johnson2006}}\label{fig:cat_map}
+\end{figure}
+
+
+\end{knitrout}
+
+
+
+\section{Concluding remarks}
+\label{sec:conclusion}
+
+The recognition of the importance of phylogenies to account for the statistical
+non-independence of species in comparative methods, and the recent development
+of methods to explore trait evolution or changes in diversification rates have
+driven the need for accurate phylogenies. However, there is often a discrepancy
+between taxa targeted by comparative methods, and taxa for which phylogenies are
+available. We believe that by providing an easy-to-use interface to obtain
+phylogenies for an arbitrary set of taxa directly in R, \texttt{rotl} will be
+useful in a wide variety of contexts.
+
+The accuracy and usefulness of the data provided by OTL relies on the community
+to make generated phylogenies (and their metadata) digitally available as tree
+files (i.e., Newick, NEXUS or NeXML). We strongly encourage researchers to
+submit their published phylogenies to OTL using the curator interface
+\url{https://tree.opentreeoflife.org/curator}. By facilitating the discovery and
+re-use of published trees and of the synthetic tree, we hope \texttt{rotl} will
+contribute to the wider adoption of best practices to make phylogenetic
+information available and re-usable.
+
+
+\section{Availability}
+\label{sec:availability}
+
+\texttt{rotl} is free, open source, and released under a Simplified
+BSD license. Stable versions are available from the CRAN repository
+\url{https://cran.r-project.org/package=rotl}, and development
+versions are available from GitHub
+\url{https://github.com/ropensci/rotl}\DIFdelbegin \DIFdel{. The package is under active development,
+and authors welcome bug reports of feature requests via the github repository}\DIFdelend . The source for this manuscript is
+available at \url{https://github.com/fmichonneau/rotl-ms}.
+
+Python \url{https://github.com/OpenTreeOfLife/pyopentree} and Ruby
+\url{https://github.com/SpeciesFileGroup/bark} libraries to interact
+with the OTL APIs are also available.
+
+
+\section{Acknowledgments}
+\label{sec:acknowledgments}
+
+We would like to thank the organizers of the OpenTree of Life APIs hackathon
+that was held at the University of Michigan, Ann Arbor, September 15-19, 2014,
+where the development of \texttt{rotl} was started. We would also like to thank
+Scott Chamberlain (rOpenSci) for providing a thorough code review. FM was
+supported by iDigBio, and therefore this material is based upon work supported
+by the National Science Foundation’s Advancing Digitization of Biodiversity
+Collections Program (Cooperative Agreement EF-1115210)
+
+\bibliographystyle{sysbio}
+
+\bibliography{rotl-manuscript}
+
+\end{document}
