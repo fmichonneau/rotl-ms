@@ -1,97 +1,156 @@
 
 \documentclass[12pt,letterpaper]{article}
 
-%%%%% packages provided by sys bio template \usepackage{fixltx2e}
-\usepackage{textcomp} \usepackage{fullpage} \usepackage{amsfonts}
-\usepackage{verbatim} %% \usepackage[english]{babel} %% I use polyglossia
-instead %% not needed: \usepackage{pifont} \usepackage{color}
-\usepackage{setspace} \usepackage{lscape} \usepackage{indentfirst}
-\usepackage[normalem]{ulem} \usepackage{booktabs} %\usepackage{nag}
-\usepackage{natbib} %\usepackage{bibtex} \usepackage{float}
-\usepackage{latexsym} %\usepackage{hyperref} \usepackage{url} %\usepackage{html}
-\usepackage{hyperref} \usepackage{epsfig} \usepackage{graphicx}
-\usepackage{amssymb} \usepackage{amsmath} \usepackage{bm} \usepackage{array}
-%\usepackage{mhchem} \usepackage{ifthen} %% I am already using it:
-\usepackage{caption} \usepackage{hyperref} %\usepackage{xcolor}
-\usepackage{amsthm} \usepackage{amstext} %%%%
+%%%%% packages provided by sys bio template
+\usepackage{fixltx2e}
+\usepackage{textcomp}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{verbatim}
+%% \usepackage[english]{babel} %% I use polyglossia instead
+%% not needed: \usepackage{pifont}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{lscape}
+\usepackage{indentfirst}
+\usepackage[normalem]{ulem}
+\usepackage{booktabs}
+%\usepackage{nag}
+\usepackage{natbib}
+%\usepackage{bibtex}
+\usepackage{float}
+\usepackage{latexsym}
+%\usepackage{hyperref}
+\usepackage{url}
+%\usepackage{html}
+\usepackage{hyperref}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{array}
+%\usepackage{mhchem}
+\usepackage{ifthen}
+%% I am already using it: \usepackage{caption}
+\usepackage{hyperref}
+%\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{amstext}
+%%%%
 
 
 % line numbers
-\usepackage{lineno} \modulolinenumbers[5] \linenumbers
+\usepackage{lineno}
+\modulolinenumbers[5]
+\linenumbers
 
-\usepackage{natbib} \usepackage[T1]{fontenc} \usepackage{graphicx}
-\usepackage[margin=1in]{geometry} \usepackage[font=sf]{caption}
+\usepackage{natbib}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage[font=sf]{caption}
 
 % Latex special characters are rendered correctly with XeTeX
-\usepackage{xltxtra} \usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{xunicode}
 \defaultfontfeatures{Mapping=tex-text}
 
 % Words are cut where needed
-\usepackage{polyglossia} \setdefaultlanguage[variant=american]{english}
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=american]{english}
 
 % Use fancy fonts
-\usepackage{fontspec} \setmainfont[Mapping=tex-text]{Crimson Text}
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Crimson Text}
 \setsansfont{SourceSansPro-Regular}
 
-%%% syst bio options \linespread{1.66}
-% All text should be double-spaced with occasional exceptions for tables.
-\raggedright \setlength{\parindent}{0.5in}
+%%% syst bio options
+\linespread{1.66}
+% All text should be double-spaced
+% with occasional exceptions for tables.
+\raggedright
+\setlength{\parindent}{0.5in}
 
 \setcounter{secnumdepth}{0}
 
-% Our sections are not numbered and our papers do not have Tables of Contents.
-% We don't present a list of figures or list of tables, either.
+% Our sections are not numbered and our papers do not have
+% Tables of Contents. We don't
+% present a list of figures or list of tables, either.
 
-% Any common font is fine.  (A common sans-serif font should be used on figures,
-% but figures should be separate from the LaTeX document.)
+% Any common font is fine.
+% (A common sans-serif font should be used on figures, but figures should be
+% separate from the LaTeX document.)
 
 \pagestyle{empty}
 
-\renewcommand{\section}[1]{% \bigskip \begin{center} \begin{Large}
-        \normalfont\scshape #1 \medskip \end{Large} \end{center}}
+\renewcommand{\section}[1]{%
+\bigskip
+\begin{center}
+\begin{Large}
+\normalfont\scshape #1
+\medskip
+\end{Large}
+\end{center}}
 
-\renewcommand{\subsection}[1]{% \bigskip \begin{center} \begin{large}
-        \normalfont\itshape #1 \end{large} \end{center}}
+\renewcommand{\subsection}[1]{%
+\bigskip
+\begin{center}
+\begin{large}
+\normalfont\itshape #1
+\end{large}
+\end{center}}
 
-\renewcommand{\subsubsection}[1]{% \vspace{2ex} \noindent \textit{#1.}---}
+\renewcommand{\subsubsection}[1]{%
+\vspace{2ex}
+\noindent
+\textit{#1.}---}
 
 \renewcommand{\tableofcontents}{}
 
-\bibpunct{(}{)}{;}{a}{}{,}  % this is a citation format command for natbib %%%
-end syst bio options
+\bibpunct{(}{)}{;}{a}{}{,}  % this is a citation format command for natbib
+%%% end syst bio options
 
 
-\newcolumntype{b}{X} \newcolumntype{s}{>{\hsize=.2\hsize}X}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.2\hsize}X}
 
-% -----------------------------------------------------------------------------
-% %
+% ----------------------------------------------------------------------------- %
 
 \begin{document}
 
-\begin{flushright} Version dated: \today \end{flushright}
+\begin{flushright}
+Version dated: \today
+\end{flushright}
 
-\bigskip \noindent AN R PACKAGE TO INTERACT WITH THE OPEN TREE OF LIFE
+\bigskip
+\noindent AN R PACKAGE TO INTERACT WITH THE OPEN TREE OF LIFE
 
-\bigskip \medskip
+\bigskip
+\medskip
 
-\begin{center} \noindent{\Large \bf \texttt{rotl} an R package to interact with
-the Open Tree of Life Data}
+\begin{center}
+  \noindent{\Large \bf \texttt{rotl} an R package to interact with the Open Tree
+    of Life Data}
 
 \bigskip
 
-\noindent{\normalsize \sc Fran\c{c}ois Michonneau$^{1,2}$, Joseph Brown$^3$,
-David Winter$^4$}\\
+\noindent{\normalsize \sc Fran\c{c}ois Michonneau$^{1,2}$, Joseph Brown$^3$, David Winter$^4$}\\
 
 \noindent {\small \it $^1$ Whitney Laboratory for Marine Sciences, University of
-Florida, St. Augustine, FL, USA}\\ \noindent {\small \it $^2$Florida Museum of
-Natural History, University of Florida, Gainesville, FL, USA} \\
+  Florida, St. Augustine, FL, USA}\\
+\noindent {\small \it $^2$Florida Museum of Natural History, University of
+  Florida, Gainesville, FL, USA} \\
 \noindent{\small \it $^3$University of Michigan, Ann Arbor, MI, USA} \\
 \noindent{\small \it $^4$Arizona State University, Tempe, AZ, USA} \\
-\end{center} \medskip
+\end{center}
+\medskip
 
 \noindent{\bf Corresponding author:} Fran\c{c}ois Michonneau, Division of
 Invertebrate Zoology, Florida Museum of Natural History, Gainesville, FL
 32611-7800, USA; E-mail: francois.michonneau@gmail.com\\
+
+
 
 
 \vspace{1in}
