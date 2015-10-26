@@ -39,6 +39,9 @@
 \usepackage{amstext}
 %%%%
 
+%% Highlighting 
+\usepackage{soul}
+
 
 % line numbers
 \usepackage{lineno}
@@ -217,28 +220,34 @@ material, develop outreach activities to explore relationships among species).
 % as their position is inferred based on taxonomy.
 
 
-The Open Tree of Life project provides a web interface to explore, query and
-download parts of the synthetic Open Tree (\url{http://tree.opentreeoflife.org})
-and the published trees that contribute to it. Additionally, the project
-provides Application Programming Interfaces (APIs)  to access programmatically
-the different services and underlying data.  Here, we present \texttt{rotl} a
-package to interact with OTL's APIs to search for and import phylogenetic trees
-and taxonomic information directly in R. Having access to this data in R allows
-researchers to take advantage of the multiple packages that are available to
-visualize, analyze and manipulate phylogenetic and comparative data (e.g., ape
-\citealt{Paradis2004}, phytools \citeateu{Revell2012}, geiger
-\citealt{Pennell2014-geiger}, ggtree \citealt{Yu-ggtree}, phylobase
-\citealt{phylobase-0.8.0}, RNeXML \citealt{Boettiger2015}, see
+The R programming language is a popular tool for  phylogenetics and comparative
+analysis. The R packages \texttt{ape} \cite{Paradis2004}, \texttt{phylobase}
+\cite{phylobase-0.8.0 }and \texttt{RNeXML} \cite{Boettiger2015} provide
+functions to import and manipulate trees within R and save the results in
+standard data formats. Additional packages including  \texttt{phytools}
+\cite{Revell2012}, \texttt{geiger} \cite{Pennell2014-geiger} and \texttt{ggtree} 
+\cite{Yu-ggtree} to allow users to analyse and visualise data in a 
+phylogenetic context (see 
 \url{https://cran.r-project.org/web/views/Phylogenetics.html} for a
-comprehensive list). There is also a growing list of packages that allow users
-to query and acces data from the web directly in R \hl{rFISHBASE
-10.1111/j.1095-8649.2012.03464.x, paleoDB 10.1111/ecog.01154, rAvis
-10.1371/journal.pone.0091650 \dots}. By providing direct access to high quality
-phylogenetic data in R, \texttt{rotl} fills a key gap typical comparative
-analysis workflows. Moreover, by allowing the gathering, processing and analysis
-of data to be performed programmatically, \texttt{rotl} facilitates reproducible
-research practices. 
+comprehensive list of phylogenetics packages in R). In addition to packages for
+phylogentic analyses, a growing number of R packages allow users to query and
+acess data from the web \hl{(rFISHBASE 10.1111/j.1095-8649.2012.03464.x, 
+paleoDB 10.1111/ecog.01154,  rAvis 10.1371/journal.pone.0091650)}, meaning data 
+associated with taxa in a given phylogeny can be obtained directly in R. 
+These packages, combined the language's support for literatre programming 
+\hl{(Knuth\_1984, Xie\_2014)} make R an ideal platform for reproducable research
+in phylogentics and comparative biology, as they allow a complete record of the 
+steps taken in gathering, processing and analysing a given data set to be
+produced.
 
+Here we present \texttt{rotl}, and R package that allows users to download
+phylogentic and taxonomic data from Open Tree of Life in R. \texttt{rotl} takes
+adavantage of Application Programming Interfaces (APIs) provided by OTL to acess
+sub-trees from the synthetic Open Tree and the published trees that contribute
+to the synthesis. By providing direct access to high quality
+phylogenetic data in R, \texttt{rotl} fills a key gap typical comparative
+analysis workflows, and extends the degree to which R supports reproducable
+research in phylogenetics and comparative biology.
 
 \section{API services provided by OTL}
 
@@ -295,7 +304,7 @@ taxonomic information (i.e., monotypic taxon).
 The package is well-documented, and includes two package
 vignettes (documents that demonstrate the use of the package and contain executable 
 R code) as well as per-function documentation. There is also an extensive
-test-suite that covers both the internal functions that \textt{rotl} uses to
+test-suite that covers both the internal functions that \texttt{rotl} uses to
 connect to OTL and public functions users apply to acess and process data. 
 
 
@@ -430,12 +439,23 @@ download these datasets directly in R enabling direct and reproducible analyses.
 Notably, the organization rOpenSci \url{https://ropensci.org} has fostered a
 community of researchers who develop tools and methods to facilitate the use of
 open data and broaden the adoption of open science practices in
-general. \texttt{rotl} contributes to this initiative, and data from OTL can be
-combined with other sources easily. For instance in Figure~\ref{fig:cat_map}, we
-show how we can obtain a map of the occurrences for some of the cat species
+general. For instance, the rOpenSci-developed pacakge \texttt{rTreeBase} allows
+users to acess phylogenies stored in treebase. \texttt{rotl} contributes to this
+initiative, and greatly extends the number of taxa for which phylogenetic data
+can be retreived within R while allowing the  data from OTL can be combined with 
+other sources easily. 
+
+The package vignettes provide two demonstrations of the integration of a
+phylogeny and data associated the taxa it represents. Specifically, the 
+``Data mashups'' vignette provides an example of how data associated with tip-taxa
+can be gathered and visualized. Another vigenette titled ``meta-analysis'' 
+demonstrates how a complete analysis, including the gathering of data and a
+phylogeny, can be performed in a single R session. We further demonstrate the
+integration of phylogenetic data retrieved with \texttt{rotl} with other other
+data here. We how how we can obtain a map of the occurrences for some of the cat species
 (genus \textit{Lynx}) included in the phylogeny above using records for these
-species found in GBIF (code available in Appendix). Another example is available
-in the package vignette ``Data mashups''.
+species found in GBIF (code available in Appendix)
+
 
 <<cat_map, purl=TRUE, echo=FALSE, size='small', fig.height=4.2, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}'>>=
 ## load required packages
@@ -531,7 +551,7 @@ where the development of \texttt{rotl} was started. We would also like to thank
 Scott Chamberlain (rOpenSci) for providing a thorough code review. FM was
 supported by iDigBio, and therefore this material is based upon work supported
 by the National Science Foundation’s Advancing Digitization of Biodiversity
-Collections Program (Cooperative Agreement EF-1115210)
+Collections Program (Cooperative Agreement EF-1115210). 
 
 \bibliographystyle{sysbio}
 
