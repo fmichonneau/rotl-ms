@@ -41,5 +41,5 @@ clean: clean-partial
 
 clear-cache:
 	- rm -rf ./cache
-	- Rscript -e "install.packages(c('rgbif', 'mapproj'), quiet=TRUE)"
+
 
