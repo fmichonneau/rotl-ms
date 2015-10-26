@@ -234,15 +234,15 @@ phylogentic analyses, a growing number of R packages allow users to query and
 acess data from the web \hl{(rFISHBASE 10.1111/j.1095-8649.2012.03464.x, 
 paleoDB 10.1111/ecog.01154,  rAvis 10.1371/journal.pone.0091650)}, meaning data 
 associated with taxa in a given phylogeny can be obtained directly in R. 
-These packages, combined the language's support for literatre programming 
-\hl{(Knuth\_1984, Xie\_2014)} make R an ideal platform for reproducable research
-in phylogentics and comparative biology, as they allow a complete record of the 
+These packages, combined the language's support for literature programming 
+\hl{(Knuth\_1984, Xie\_2014)} make R an ideal platform for reproducible research
+in phylogenetics and comparative biology, as they allow a complete record of the 
 steps taken in gathering, processing and analysing a given data set to be
 produced.
 
 Here we present \texttt{rotl}, and R package that allows users to download
-phylogentic and taxonomic data from Open Tree of Life in R. \texttt{rotl} takes
-adavantage of Application Programming Interfaces (APIs) provided by OTL to acess
+phylogenetic and taxonomic data from Open Tree of Life in R. \texttt{rotl} takes
+advantage of Application Programming Interfaces (APIs) provided by OTL to acess
 sub-trees from the synthetic Open Tree and the published trees that contribute
 to the synthesis. By providing direct access to high quality
 phylogenetic data in R, \texttt{rotl} fills a key gap typical comparative
@@ -440,15 +440,15 @@ Notably, the organization rOpenSci \url{https://ropensci.org} has fostered a
 community of researchers who develop tools and methods to facilitate the use of
 open data and broaden the adoption of open science practices in
 general. For instance, the rOpenSci-developed pacakge \texttt{rTreeBase} allows
-users to acess phylogenies stored in treebase. \texttt{rotl} contributes to this
+users to access phylogenies stored in treebase. \texttt{rotl} contributes to this
 initiative, and greatly extends the number of taxa for which phylogenetic data
-can be retreived within R while allowing the  data from OTL can be combined with 
+can be retrieved within R while allowing the  data from OTL can be combined with 
 other sources easily. 
 
 The package vignettes provide two demonstrations of the integration of a
 phylogeny and data associated the taxa it represents. Specifically, the 
 ``Data mashups'' vignette provides an example of how data associated with tip-taxa
-can be gathered and visualized. Another vigenette titled ``meta-analysis'' 
+can be gathered and visualized. Another vignette titled ``meta-analysis'' 
 demonstrates how a complete analysis, including the gathering of data and a
 phylogeny, can be performed in a single R session. We further demonstrate the
 integration of phylogenetic data retrieved with \texttt{rotl} with other other
