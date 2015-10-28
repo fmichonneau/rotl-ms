@@ -4,3 +4,7 @@ auto/
 /manuscript.blg
 /manuscript.out
 /manuscript.tex
+cache
+figure
+*.pdf
+

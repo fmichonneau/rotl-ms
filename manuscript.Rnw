@@ -459,9 +459,15 @@ species found in GBIF (code available in Appendix)
 
 <<cat_map, purl=TRUE, echo=FALSE, size='small', fig.height=4.2, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}'>>=
 ## load required packages
+library(rotl)
 library(rgbif)
 library(ggplot2)
 library(maps)
+
+## Import the felid tree using study and tree IDs discovered with 
+## studies_find_studies() in the manuscript
+cat_tree <- get_study_tree(study_id ="pg_1981",                           
+                           tree_id = "tree4052")
 
 ## Find the species of Lynx in the phylogeny
 cat_species <- cat_tree$tip.label
