@@ -6,6 +6,13 @@ manuscript_bib = rotl-manuscript.bib
 manuscript_pdf:= $(manuscript_name).pdf
 manuscript_app:= $(manuscript_name)-appendix.pdf
 
+ARTIFACTS=$(manuscript_pdf) \
+	$(manuscript_tex) \
+	$(manuscript_app) \
+	$(manuscript_name)-no_app.pdf \
+	cache \
+	figure
+
 all: $(manuscript_tex) clean-partial appendix
 #	cp ~/Library/$(manuscript_bib) .
 	-xelatex -interaction=nonstopmode "\input" $<
@@ -42,4 +49,6 @@ clean: clean-partial
 clear-cache:
 	- rm -rf ./cache
 
+distclean:
+	rm -f $(ARTIFACTS)
 
