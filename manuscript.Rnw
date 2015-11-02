@@ -503,11 +503,12 @@ world <- map_data("world")
 ggplot(lynx_loc) +
     annotation_map(world, fill="gray40", color="gray40") +
     geom_point(aes(y = decimalLatitude, x = decimalLongitude, color = Species),
-               alpha = 0.3, size = 2) +
+               size = 1) +
     coord_map(projection = "mercator", orientation = c(90, 0, 0)) +
     xlab("Longitude") + ylab("Latitude") +
-    theme(legend.position="top") + ylim(c(0,72))
-
+    theme(legend.position="top",
+          legend.key = element_rect(fill = "gray40")) +
+    ylim(c(0,72))
 @
 
 
