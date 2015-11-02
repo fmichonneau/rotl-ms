@@ -542,8 +542,10 @@ information available and re-usable.
 \texttt{rotl} is free, open source, and released under a Simplified BSD
 license. Stable versions are available from the CRAN repository
 (\url{https://cran.r-project.org/package=rotl}), and development versions are
-available from GitHub (\url{https://github.com/ropensci/rotl}). The package is
-under active development, and authors welcome bug reports or feature requests
+available from GitHub (\url{https://github.com/ropensci/rotl}). This manuscript
+was built using version 0.4.1.999-rotl-ms.1
+(\url{https://github.com/ropensci/rotl/tree/v0.4.1.999-rotl-ms.1}). The package
+is under active development, and authors welcome bug reports or feature requests
 via the GitHub repository.  The source for this manuscript is available on
 GitHub (\url{https://github.com/fmichonneau/rotl-ms}).
 
