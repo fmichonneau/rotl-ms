@@ -299,16 +299,16 @@ among species, or to map traits on a phylogeny.
 \section{Technical information about \texttt{rotl}}
 
 Phylogenetic information retrieved from OTL is converted into
-\texttt{ape::phylo} objects by \texttt{rotl} using the NEXUS Class Library
+\texttt{phylo} objects by \texttt{rotl} using the NEXUS Class Library
 \citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
 (\url{https://cran.r-project.org/package=rncl}). Using NCL provides robust and
 efficient parsing of large trees that may contain singleton nodes labeled with
-taxonomic information (i.e., monotypic taxon).
+taxonomic information (i.e. a monotypic taxon).
 
-The package is well-documented, and includes two package
+The package is well-documented, and includes three package
 vignettes (documents that demonstrate the use of the package and contain executable
 R code). There is also an extensive test-suite that covers both the internal
-functions that \texttt{rotl} uses to connect to OTL and public functions users
+functions that \texttt{rotl} uses to connect to OTL and public functions that users
 apply to access and process data.
 
 
@@ -318,14 +318,12 @@ apply to access and process data.
 \subsection{Getting relationships from a list of taxa}
 \label{sec:get-relationships}
 
-To get the relationships among a set of taxa from the Open Tree, the taxa first
-need to be matched against the OTL taxonomy (OTT) using the TNRS. This step
-retrieves the identifiers that will be used to extract the relationships for the
-set of requested taxa.
-
-To illustrate how to obtain relationships from a set of taxa, we will rely on
-OTL to draw a phylogenetic tree for a set of model organisms. First, we use the function
-\texttt{tnrs\_match\_names} to match the taxon names to their Open Taxonomy identifiers.
+Before a researcher can use the Open Tree to retrieve relationships among a set
+of taxa, they first need to match the taxon names in their dataset with records
+in the Open Tree Taxonomy (OTT). The TNRS allows users to search for taxon
+names, and retreive identifiers for each matching taxon. We demonstrate the use
+of the TNRS within \texttt{rotl} by searching for taxonomic records associated
+with several model organisms.
 
 <<init, echo=FALSE, purl=FALSE>>=
 library(rotl)
@@ -348,8 +346,8 @@ Open Tree identifiers as well as other information to help users ensure that the
 taxa matched are the correct ones. Here, there is no ambiguity in the taxa
 matched; however, as OTT includes taxa from bacteria, plants,
 and animals that are regulated by different nomenclatural codes (ICNP, ICN, and
-ICZN, respectively), both OTL and \texttt{rotl} provide tools to deal with potential
-hemihomonyms. The argument \texttt{context\_name} can be used to limit potential
+ICZN, respectively), both OTL and \texttt{rotl} provide tools to deal with names
+that may represent valid taxa in more than one code. The argument \texttt{context\_name} can be used to limit potential
 matches to a taxonomic group such as ``Animals'' (see the function
 \texttt{tnrs\_contexts} for a complete list of possible options). When this strategy
 cannot be used (as in the present example, where the tree encompasses
@@ -370,7 +368,7 @@ correct match for these taxa.
 Now that the taxon names are matched to the Open Tree identifiers, we can pass
 them to the function \texttt{tol\_induced\_subtree} to retrieve the
 relationships among these taxa. In turn, the tree can be plotted directly as it
-is returned as an \texttt{ape::phylo} object (Figure~\ref{fig:plot_taxa}).
+is returned as \texttt{phylo} object (Figure~\ref{fig:plot_taxa}).
 
 <<plot_taxa, fig.height=4, cache=TRUE, purl=FALSE, fig.cap="The phylogenetic tree returned by OTL for the list of model species used as an example.">>=
 tree <- tol_induced_subtree(ott_ids = taxa[["ott_id"]])
@@ -422,7 +420,7 @@ plot(cat_tree, label.offset=.0001, cex=.75, no.margin=TRUE)
 When more than one tree is available for a given study, the function
 \texttt{list\_trees} returns a list containing the tree identifiers for each
 study. Alternatively, the function \texttt{get\_study} returns all the trees (by
-default as \texttt{ape::phylo} objects) associated with a particular
+default as \texttt{phylo}) associated with a particular
 study. Additional details about the study (i.e., its metadata) can be obtained
 using the function \texttt{get\_study\_meta}.
 
