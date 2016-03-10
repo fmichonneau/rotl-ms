@@ -442,7 +442,9 @@ When more than one tree is available for a given study, the function
 \texttt{list\_trees} returns a list containing the tree identifiers for each
 study. Alternatively, the function \texttt{get\_study} returns all the trees (by
 default as \texttt{phylo}) associated with a particular
-study. Additional details about the study (i.e., its metadata) can be obtained
+study. Metadata about the study (e.g., citation information, information about
+the curator for the study, and other technical information regarding the import
+of this study) can be obtained
 using the function \texttt{get\_study\_meta}.
 
 
