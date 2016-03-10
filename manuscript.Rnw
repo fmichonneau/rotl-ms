@@ -466,10 +466,10 @@ taxa for which phylogenetic data can be retrieved within R, while allowing the
 data from OTL to be combined with other sources easily.
 
 Here we show how we can obtain a map of the occurrences for a subset of the cat
-species (genus \textit{Lynx}) that were included in the phylogeny retrieved from
-the Felidae study above. We extract the species names from the phylogeny, and use
-them to ask for the records for these species found in GBIF
-(Figure~\ref{fig:cat_map}). We include the code to reproduce this figure in the
+species that were included in the phylogeny retrieved from the Felidae study
+above (genus \textit{Lynx}). We extract the species names from the phylogeny,
+and use them to ask for the records for these species found in GBIF
+(Figure~\ref{fig:cat_map}). We include the code to reproduce this figure in
 Appendix.
 
 In addition of an introduction on how to use the package, \texttt{rotl} includes
