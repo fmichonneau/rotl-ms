@@ -288,7 +288,8 @@ use will not be demonstrated in this paper, although \texttt{rotl} has functions
 retrieve data it provides.
 
 \texttt{rotl} gives users access to all endpoints provided by version 2 of the
-OTL APIs. Phylogenetic trees served by the API can be imported directly into
+OTL APIs, and other versions of the API can be selected by the user as they
+become available. Phylogenetic trees served by the API can be imported directly into
 R's memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
 structure (objects of class \texttt{phylo}), or can be written to files in the
 Newick, NEXUS \citep{Maddison1997}, or NeXML \citep{Vos2012} file formats. This
