@@ -298,12 +298,14 @@ among species, or to map traits on a phylogeny.
 
 \section{Technical information about \texttt{rotl}}
 
-Phylogenetic information retrieved from OTL is converted into
-\texttt{phylo} objects by \texttt{rotl} using the NEXUS Class Library
-\citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
+Phylogenetic information retrieved from OTL is converted into \texttt{phylo}
+objects by \texttt{rotl} using the NEXUS Class Library \citep[NCL,][]{Lewis2003}
+as implemented in the \texttt{rncl} package
 (\url{https://cran.r-project.org/package=rncl}). Using NCL provides robust and
 efficient parsing of large trees that may contain singleton nodes labeled with
-taxonomic information (i.e. a monotypic taxon).
+taxonomic information (i.e., a monotypic taxon). Singleton nodes are collapsed
+after the tree has been parsed, making the resulting \texttt{phylo} object
+compatible with all functions from the \texttt{ape} package.
 
 The package is well-documented, and includes three package
 vignettes (documents that demonstrate the use of the package and contain executable
