@@ -203,12 +203,12 @@ practices).
 
 The Open Tree of Life (OTL) project aims at assembling and synthesizing our
 current understanding of phylogenetic relationships across all organisms on
-Earth \citep{Hinchliff2015}, while providing tools and services that facilitate
-access to this information. OTL combines taxonomic information that serves as
-the backbone for the phylogenetic relationships, and published phylogenies to
-elucidate relationships among taxa. This combination of information is used to
-structure the comprehensive synthetic tree. Studies can be contributed to the
-synthetic tree through a curator interface
+Earth while providing tools and services that facilitate access to this
+information \citep{Hinchliff2015}. OTL combines taxonomic information that
+serves as the backbone for the phylogenetic relationships, and published
+phylogenies to elucidate relationships among taxa. This combination of
+information is used to structure the comprehensive synthetic tree. Studies can
+be contributed to the synthetic tree through a curator interface
 (\url{https://tree.opentreeoflife.org/curator}), allowing the synthetic tree to
 be continuously updated as relationships are elucidated or reevaluated. The
 current draft of the OTL synthetic tree contains 2.3 million tips. Beyond
