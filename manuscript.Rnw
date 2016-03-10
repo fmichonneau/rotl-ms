@@ -380,9 +380,12 @@ plot(tree, cex = .8, label.offset = .1, no.margin = TRUE)
 
 \texttt{rotl} can also be used to retrieve trees accompanying studies that have
 been submitted through the curator interface, and identify the trees that
-contribute to the synthetic tree. These trees constitute a useful resource to
-reproduce or expand on a previously published analysis, or to explore how the
-elucidation of relationships within a clade has changed through time.
+contribute to the synthetic tree. As of March 2016, the Open Tree of Life
+project stores 7755 trees from 3399 studies (each having between 0 and 61
+trees), and 477 of these trees are used to assemble the synthetic tree. These
+trees constitute a useful resource to reproduce or expand on a previously
+published analysis, or to explore how the elucidation of relationships within
+a clade has changed through time.
 
 Criteria that can be used to search for studies or their associated trees are
 available through the output of the function
