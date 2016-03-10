@@ -464,14 +464,24 @@ to access phylogenies stored in treeBASE (\url{www.treebase.org}).
 taxa for which phylogenetic data can be retrieved within R, while allowing the
 data from OTL to be combined with other sources easily.
 
-The package vignettes provide two demonstrations of the integration of a
-phylogeny and data associated with the taxa it represents. Specifically, the ``Data
-mashups'' vignette provides an example of how data associated with tip-taxa can
-be gathered and visualized. Another vignette titled ``meta-analysis''
-demonstrates how a complete analysis, including the gathering of data and a
-phylogeny, can be performed in a single R session. We further demonstrate the
-integration of phylogenetic data retrieved using \texttt{rotl} with other data
-here.
+Here we show how we can obtain a map of the occurrences for a subset of the cat
+species (genus \textit{Lynx}) that were included in the phylogeny retrieved from
+the Felidae study above. We extract the species names from the phylogeny, and use
+them to ask for the records for these species found in GBIF
+(Figure~\ref{fig:cat_map}). We include the code to reproduce this figure in the
+Appendix.
+
+In addition of an introduction on how to use the package, \texttt{rotl} includes
+two vignettes that demonstrate how to integrate a phylogeny and data associated
+with the taxa it represents. Specifically, the ``Data mashups'' vignette
+provides an example of how to retrieve a phylogeny for species a researcher may
+have data for, and visualize both the phylogeny and data associated with the
+species at the tips. The other vignette titled ``Meta-analysis'' demonstrates how a complete
+comparative method analysis, including the gathering of data and a phylogeny, can be
+performed in a single R session. We reproduce a published meta-analysis testing
+for differential investment in male and female offsprings among 51 species of
+birds. As new versions of the OTL API and \texttt{rotl} are released,
+these vignettes will be kept up-to-date.
 
 
 
