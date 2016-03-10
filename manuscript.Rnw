@@ -236,11 +236,25 @@ phylogenetic and comparative analyses, a growing number of R packages allows
 users to query and access data from the web (e.g. \texttt{rFISHBASE}
 \citep{Boettiger2012}, \texttt{rAvis} \citep{Varela2014}, and \texttt{paleoDB}
 \citep{Varela2015}), such that data associated with taxa in a given phylogeny
-can be obtained directly in R.  These packages, combined with the language's
-support for literate programming (\citealt{Knuth1984}; \citealt{Xie2014}), make
-R an ideal platform for reproducible research in phylogenetics and comparative
-biology, as they allow a complete record of the steps taken in gathering,
-processing, and analyzing a given data set to be produced.
+can be obtained directly in R.
+
+In ecology, the development of the field of community phylogenetics
+\citep{Webb2002} has created a need for researchers to have access to the
+evolutionary relationships of species making up communities. The relative
+contributions of the role of the environment (e.g., habitat filtering), and of
+biotic interactions (e.g., competitive exclusion), are inferred from the
+distribution of taxa on a phylogeny composed from species occurring at larger
+spatial scale. R packages and other software have been developed to generate
+phylogenies from species lists using taxonomic information or DNA
+sequences. These phylogenies can then be used for community phylogenetics
+analyses (e.g., \citep{Pearse2013}, \citep{Kembel}, \citep{Webb}), but as OTL
+becomes more comprehensive, it could become a valuable resource for ecologists.
+
+These packages, combined with the language's support for literate programming
+(\citealt{Knuth1984}; \citealt{Xie2014}), make R an ideal platform for
+reproducible research in phylogenetics and comparative biology, as they allow a
+complete record of the steps taken in gathering, processing, and analyzing a
+given data set to be produced.
 
 Here we present \texttt{rotl}, and R package that allows users to download
 phylogenetic and taxonomic data from the OTL directly in R. \texttt{rotl} takes
