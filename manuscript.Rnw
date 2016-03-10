@@ -473,6 +473,11 @@ and use them to ask for the records for these species found in GBIF
 (Figure~\ref{fig:cat_map}). We include the code to reproduce this figure in
 Appendix.
 
+As trait databases are becoming increasingly more common, and interfaces to the
+data they contains are being developed as R packages \citep[e.g., the package
+\texttt{traits}][]{Chamberlain2015}, \texttt{rotl} provides a
+way to easily retrieve phylogenetic information for species trait data that are available.
+
 In addition of an introduction on how to use the package, \texttt{rotl} includes
 two vignettes that demonstrate how to integrate a phylogeny and data associated
 with the taxa it represents. Specifically, the ``Data mashups'' vignette
