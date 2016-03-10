@@ -405,11 +405,12 @@ a clade has changed through time.
 
 Criteria that can be used to search for studies or their associated trees are
 available through the output of the function
-\texttt{studies\_properties}. Typically, users will want to search for studies
-or trees based on taxon names (or their OTT identifiers), but other
-criteria such as the title of the publication can be used. Here we demonstrate
-how to look for and retrieve trees for studies focusing on the family Felidae
-(Figure~\ref{fig:plot_cats}).
+\texttt{studies\_properties}. The meaning of these properties is described at:
+\url{https://github.com/OpenTreeOfLife/phylesystem-api/wiki/NexSON}. Typically,
+users will want to search for studies or trees based on taxon names (or their
+OTT identifiers), but other criteria such as the title of the publication can be
+used. Here we demonstrate how to look for and retrieve trees for studies
+focusing on the family Felidae (Figure~\ref{fig:plot_cats}).
 
 <<get_cats, purl=FALSE, fig.cap="Tree from \\citealt{Johnson2006} obtained from OTL">>=
 cat_studies <- studies_find_studies(property = "ot:focalCladeOTTTaxonName",
