@@ -444,7 +444,7 @@ reproducible analyses.  Notably, the organization rOpenSci
 (\url{https://ropensci.org}) has fostered a community of researchers who develop
 tools and methods to facilitate the use of open data as well broaden the
 adoption of open science practices in general. For instance, the
-rOpenSci-developed packge \texttt{TreeBase} \citep{Boettiger2012TB} allows users
+rOpenSci-developed package \texttt{TreeBase} \citep{Boettiger2012TB} allows users
 to access phylogenies stored in treeBASE (\url{www.treebase.org}).
 \texttt{rotl} contributes to this initiative, and greatly extends the number of
 taxa for which phylogenetic data can be retrieved within R, while allowing the
