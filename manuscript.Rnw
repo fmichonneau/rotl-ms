@@ -418,7 +418,8 @@ focusing on the family Felidae (Figure~\ref{fig:plot_cats}).
 
 <<get_cats, purl=FALSE, fig.cap="Tree from \\citealt{Johnson2006} obtained from OTL">>=
 cat_studies <- studies_find_studies(property = "ot:focalCladeOTTTaxonName",
-                                    value = "Felidae", exact = TRUE)cat_studies
+                                    value = "Felidae", exact = TRUE)
+cat_studies
 @
 
 Currently only one study focused on this family is available from OTL, and a
