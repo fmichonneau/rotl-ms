@@ -245,10 +245,13 @@ contributions of the role of the environment (e.g., habitat filtering), and of
 biotic interactions (e.g., competitive exclusion), are inferred from the
 distribution of taxa on a phylogeny composed from species occurring at larger
 spatial scale. R packages and other software have been developed to generate
-phylogenies from species lists using taxonomic information or DNA
-sequences. These phylogenies can then be used for community phylogenetics
-analyses (e.g., \citep{Pearse2013}, \citep{Kembel}, \citep{Webb}), but as OTL
-becomes more comprehensive, it could become a valuable resource for ecologists.
+phylogenies from species lists using taxonomic information or DNA sequences
+\citep[e.g.,][]{Webb2008,Pearse2013}. These phylogenies can then be used for
+community phylogenetics analyses \citep[e.g.,][]{Pearse2015},
+\citep{Kembel2010}, but they are often incomplete or not resolved enough. As OTL
+becomes more comprehensive, and its taxonomic resolution increases, it could
+become a valuable resource for ecologists seeking to use phylogenetic
+information in their research.
 
 These packages, combined with the language's support for literate programming
 (\citealt{Knuth1984}; \citealt{Xie2014}), make R an ideal platform for
@@ -361,26 +364,26 @@ taxa <- tnrs_match_names(names = c("Escherichia colli",
 The function \texttt{tnrs\_match\_names} returns a data frame that lists the
 Open Tree identifiers as well as other information to help users ensure that the
 taxa matched are the correct ones. Here, there is no ambiguity in the taxa
-matched; however, as OTT includes taxa from bacteria, plants,
-and animals that are regulated by different nomenclatural codes (ICNP, ICN, and
-ICZN, respectively), both OTL and \texttt{rotl} provide tools to deal with names
-that may represent valid taxa in more than one code. The argument \texttt{context\_name} can be used to limit potential
-matches to a taxonomic group such as ``Animals'' (see the function
-\texttt{tnrs\_contexts} for a complete list of possible options). When this strategy
-cannot be used (as in the present example, where the tree encompasses
-multiple domains), the function \texttt{inspect} lists alternative matches for a taxon
-name, and \texttt{update} replaces it in the results. An example of this
-approach is provided in the vignette ``How to use \texttt{rotl}?'' that
-accompanies the package.
+matched; however, as OTT includes taxa from bacteria, plants, and animals that
+are regulated by different nomenclatural codes (ICNP, ICN, and ICZN,
+respectively), both OTL and \texttt{rotl} provide tools to deal with names that
+may represent valid taxa in more than one code. The argument
+\texttt{context\_name} can be used to limit potential matches to a taxonomic
+group such as ``Animals'' (see the function \texttt{tnrs\_contexts} for a
+complete list of possible options). When this strategy cannot be used (as in the
+present example, where the tree encompasses multiple domains), the function
+\texttt{inspect} lists alternative matches for a taxon name, and \texttt{update}
+replaces it in the results. An example of this approach is provided in the
+vignette ``How to use \texttt{rotl}?'' that accompanies the package.
 
 By default, approximate matching is enabled when attempting to match taxonomic
-names to their OTT identifiers. Additionally, taxonomic synonyms
-are included in OTT, allowing researchers to match correct
-identifiers for taxon names that might include misspellings or synonyms. These
-features will facilitate the tedious data cleaning process often needed when
-mapping taxon names. In the example provided, both \textit{Escherichia coli}
-and \textit{Saccharomyces cerevisiae} are misspelled, but the OTL TNRS finds the
-correct match for these taxa.
+names to their OTT identifiers. Additionally, taxonomic synonyms are included in
+OTT, allowing researchers to match correct identifiers for taxon names that
+might include misspellings or synonyms. These features will facilitate the
+tedious data cleaning process often needed when mapping taxon names. In the
+example provided, both \textit{Escherichia coli} and \textit{Saccharomyces
+  cerevisiae} are misspelled, but the OTL TNRS finds the correct match for these
+taxa.
 
 Now that the taxon names are matched to the Open Tree identifiers, we can pass
 them to the function \texttt{tol\_induced\_subtree} to retrieve the
@@ -415,8 +418,7 @@ focusing on the family Felidae (Figure~\ref{fig:plot_cats}).
 
 <<get_cats, purl=FALSE, fig.cap="Tree from \\citealt{Johnson2006} obtained from OTL">>=
 cat_studies <- studies_find_studies(property = "ot:focalCladeOTTTaxonName",
-                                    value = "felidae")
-cat_studies
+                                    value = "Felidae", exact = TRUE)cat_studies
 @
 
 Currently only one study focused on this family is available from OTL, and a
@@ -477,20 +479,20 @@ Appendix.
 
 As trait databases are becoming increasingly more common, and interfaces to the
 data they contains are being developed as R packages \citep[e.g., the package
-\texttt{traits}][]{Chamberlain2015}, \texttt{rotl} provides a
-way to easily retrieve phylogenetic information for species trait data that are available.
+\texttt{traits}][]{Chamberlain2015}, \texttt{rotl} provides a way to easily
+retrieve phylogenetic information for species trait data that are available.
 
 In addition of an introduction on how to use the package, \texttt{rotl} includes
 two vignettes that demonstrate how to integrate a phylogeny and data associated
 with the taxa it represents. Specifically, the ``Data mashups'' vignette
 provides an example of how to retrieve a phylogeny for species a researcher may
 have data for, and visualize both the phylogeny and data associated with the
-species at the tips. The other vignette titled ``Meta-analysis'' demonstrates how a complete
-comparative method analysis, including the gathering of data and a phylogeny, can be
-performed in a single R session. We reproduce a published meta-analysis testing
-for differential investment in male and female offsprings among 51 species of
-birds. As new versions of the OTL API and \texttt{rotl} are released,
-these vignettes will be kept up-to-date.
+species at the tips. The other vignette titled ``Meta-analysis'' demonstrates
+how a complete comparative method analysis, including the gathering of data and
+a phylogeny, can be performed in a single R session. We reproduce a published
+meta-analysis testing for differential investment in male and female offsprings
+among 51 species of birds. As new versions of the OTL API and \texttt{rotl} are
+released, these vignettes will be kept up-to-date.
 
 
 
