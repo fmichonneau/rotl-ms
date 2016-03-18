@@ -422,10 +422,10 @@ cat_studies <- studies_find_studies(property = "ot:focalCladeOTTTaxonName",
 cat_studies
 @
 
-Currently there are seven studies focused on this family available from OTL, and a
-single tree is associated with each one. We can then retrieve the study and tree
-identifiers associated with the first of these studies, and pass them to the 
-function \texttt{get\_study\_tree} to have the tree in memory:
+Currently only one study focused on this family is available from OTL, and a
+single tree is associated with it. We can then retrieve the study and tree
+identifiers, and pass them to the function \texttt{get\_study\_tree} to have the
+tree in memory:
 
 <<get_cat_tree, purl=FALSE, results='hide'>>=
 cat_tree <- get_study_tree(study_id = cat_studies[["study_ids"]][1],
