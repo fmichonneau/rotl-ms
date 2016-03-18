@@ -134,8 +134,9 @@ Done
 > phyloGenerator (generate phylogenies for ecologists) and pez (for calculating
 > suites of metrics for community phylogenetics).
 
-We added information about related R packages that can be used for community
-ecology.
+We added a paragraph about the use of phylogenetics in community ecology,
+inclding a description of R packages that can be used for these analysis [Pg
+Line]
 
 > Page 4, point #2: So not all studies that can be queried through the API were
 > included in the OTL? Perhaps this can be explained a bit more here (or in the
@@ -143,13 +144,21 @@ ecology.
 
 We added the number of studies that have been submitted through the curator
 app, and the number of studies that contribute to the synthetic tree to clarify
-this point.
+this point. 
+
+"As of March 2016, the Open Tree of Life project stores 7755 trees from 3399 
+studies (each having between 0 and 61 trees), and 477 of these trees are used 
+to assemble the synthetic tree."
 
 > Page 9, line 150: What type of metadata can be extracted from a study? Is it
 > just the citation (which is the example given in “How to use rotl?” vignette)?
 
 There is a lot more information associated with each study. We re-worded the
 paragraph to mention some of them.
+
+"Metadata about the study (e.g., citation information, information about
+the curator for the study, and other technical information regarding the import
+of this study) can be obtained using the function `get_study_meta`
 
 > Page 10, paragraph 2, line 169: “other data” is a bit vague. Integration with
 > other data, for example species distribution data, is demonstrated in the
