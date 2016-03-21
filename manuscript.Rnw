@@ -283,10 +283,18 @@ APIs:
 \item The \emph{synthetic tree} itself, the `Open Tree'.
 \end{enumerate}
 
-\texttt{rotl} gives users access to all endpoints provided by version 2 of the
-OTL APIs, and other versions of the API can be selected by the user as they
-become available. Phylogenetic trees served by the API can be imported directly into
-R's memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
+\texttt{rotl} gives users access to the endpoints provided by version 2 of the
+APIs, and other versions of the APIs can be selected by the user as they become
+available (version 3 is scheduled to be released at the end of March 2016). Two
+other end-points are available in version 2 of the API: \emph{graph of life} and
+\emph{collections}. Data from the \emph{graph of life} endpoint are not intended
+for typical users, and will be removed in future releases. The \emph{collection}
+endpoint is not fully functional, and no functions are available in the current
+release of \texttt{rotl}. Future versions will make them available when the API
+implements them.
+
+Phylogenetic trees served by the API can be imported directly into R's
+memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
 structure (objects of class \texttt{phylo}), or can be written to files in the
 Newick, NEXUS \citep{Maddison1997}, or NeXML \citep{Vos2012} file formats. This
 allows researchers to use these trees either directly with other R packages, or
