@@ -197,8 +197,8 @@ in practice, synthesizing phylogenetic data is a difficult task. Phylogenetic
 information is largely scattered, often only available as image files within
 publications, and the lack of standardization to store and represent
 phylogenetic data makes it difficult for researchers to access, synthesize, and
-integrate this information into their own research (\citealt{Stoltzfus2012};
-\citealt{Drew2013}; but see \citealt{Cranston2014} for suggestions of best
+integrate this information into their own research (\citealt{Stoltzfus2012,
+  Drew2013, Magee2014}; but see \citealt{Cranston2014} for suggestions of best
 practices).
 
 The Open Tree of Life (OTL) project aims at assembling and synthesizing our
@@ -254,7 +254,7 @@ become a valuable resource for ecologists seeking to use phylogenetic
 information in their research.
 
 These packages, combined with the language's support for literate programming
-(\citealt{Knuth1984}; \citealt{Xie2014}), make R an ideal platform for
+(\citealt{Knuth1984}; \citealt{Xie2014}), make R a comprehensive platform for
 reproducible research in phylogenetics and comparative biology, as they allow a
 complete record of the steps taken in gathering, processing, and analyzing a
 given data set to be produced.
