@@ -224,7 +224,7 @@ outreach activities to explore relationships among species).
 
 The R programming language is a popular tool for phylogenetics and comparative
 analysis. The R packages \texttt{ape} \citep{Paradis2004}, \texttt{phylobase}
-\citep{phylobase-0.8.0}, and \texttt{RNeXML} \citep{Boettiger2015} each provide
+\citep{phylobase-0.8.0}, \texttt{phangorn} \citep{schliep2011} and \texttt{RNeXML} \citep{Boettiger2015} each provide
 functions to import and manipulate trees within R and save the results in
 standard data formats. Additional packages including \texttt{phytools}
 \citep{Revell2012}, \texttt{geiger} \citep{Pennell2014-geiger}, and
@@ -458,13 +458,13 @@ using the function \texttt{get\_study\_meta}.
 \label{sec:how-does-rotl-fit}
 
 In recent years, R has become an essential part of the toolbox of many
-researchers in evolutionary biology. R greatly facilitates the analysis of large
-datasets, and allows researchers to combine methods in novel ways because many
-methods for comparative analyses are implemented, and because it is a relatively
-easy to use programming language. Additionally, as more data are made available
-online and accessible using APIs, several packages have been developed to
-interact and download these datasets directly in R, thereby enabling direct and
-reproducible analyses.  Notably, the organization rOpenSci
+researchers in evolutionary biology and ecology. R greatly facilitates the 
+analysis of large datasets, and allows researchers to combine methods in novel
+ways because many methods for comparative analyses are implemented, and because
+it is a relatively easy to use programming language. Additionally, as more data 
+are made available online and accessible using APIs, several packages have been 
+developed to interact and download these datasets directly in R, thereby 
+enabling direct and reproducible analyses.  Notably, the organization rOpenSci
 (\url{https://ropensci.org}) has fostered a community of researchers who develop
 tools and methods to facilitate the use of open data as well broaden the
 adoption of open science practices in general. For instance, the
