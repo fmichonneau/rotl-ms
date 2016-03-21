@@ -283,13 +283,6 @@ APIs:
 \item The \emph{synthetic tree} itself, the `Open Tree'.
 \end{enumerate}
 
-Additionally, the project provides access to other data, the Graph of Life, that
-stores information about the underlying tree alignment graph \citep{Smith2013}
-used to synthesize the various sources of information from which the Open Tree
-is assembled. Data from this API are not intended for normal users, and its
-use will not be demonstrated in this paper, although \texttt{rotl} has functions to
-retrieve data it provides.
-
 \texttt{rotl} gives users access to all endpoints provided by version 2 of the
 OTL APIs, and other versions of the API can be selected by the user as they
 become available. Phylogenetic trees served by the API can be imported directly into
@@ -458,12 +451,12 @@ using the function \texttt{get\_study\_meta}.
 \label{sec:how-does-rotl-fit}
 
 In recent years, R has become an essential part of the toolbox of many
-researchers in evolutionary biology and ecology. R greatly facilitates the 
+researchers in evolutionary biology and ecology. R greatly facilitates the
 analysis of large datasets, and allows researchers to combine methods in novel
 ways because many methods for comparative analyses are implemented, and because
-it is a relatively easy to use programming language. Additionally, as more data 
-are made available online and accessible using APIs, several packages have been 
-developed to interact and download these datasets directly in R, thereby 
+it is a relatively easy to use programming language. Additionally, as more data
+are made available online and accessible using APIs, several packages have been
+developed to interact and download these datasets directly in R, thereby
 enabling direct and reproducible analyses.  Notably, the organization rOpenSci
 (\url{https://ropensci.org}) has fostered a community of researchers who develop
 tools and methods to facilitate the use of open data as well broaden the
