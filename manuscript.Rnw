@@ -483,7 +483,7 @@ Appendix.
 
 As trait databases are becoming increasingly more common, and interfaces to the
 data they contains are being developed as R packages \citep[e.g., the package
-\texttt{traits}][]{Chamberlain2015}, \texttt{rotl} provides a way to easily
+\texttt{traits}][]{Chamberlain2016}, \texttt{rotl} provides a way to easily
 retrieve phylogenetic information for species trait data that are available.
 
 In addition of an introduction on how to use the package, \texttt{rotl} includes
