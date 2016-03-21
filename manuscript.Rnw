@@ -502,7 +502,7 @@ released, these vignettes will be kept up-to-date.
 
 <<cat_map, purl=TRUE, echo=FALSE, size='small', fig.height=4.2, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}.'>>=
 ## load required packages. Versions used for the manuscript listed below.
-library(rotl)     # v0.5.0
+library(rotl)     # v0.5.0.901
 library(rgbif)    # v0.9.2
 library(ggplot2)  # v2.1.0
 library(maps)     # v3.1.0
