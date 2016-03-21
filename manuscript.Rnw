@@ -234,7 +234,7 @@ a phylogenetic context (see
 comprehensive list of phylogenetics packages in R). In addition to packages for
 phylogenetic and comparative analyses, a growing number of R packages allows
 users to query and access data from the web (e.g. \texttt{rFISHBASE}
-\citep{Boettiger2012}, \texttt{rAvis} \citep{Varela2014}, and \texttt{paleoDB}
+\citep{Boettiger2012}, \texttt{rAvis} \citep{Varela2014}, and \texttt{paleobioDB}
 \citep{Varela2015}), such that data associated with taxa in a given phylogeny
 can be obtained directly in R.
 
@@ -259,7 +259,7 @@ reproducible research in phylogenetics and comparative biology, as they allow a
 complete record of the steps taken in gathering, processing, and analyzing a
 given data set to be produced.
 
-Here we present \texttt{rotl}, and R package that allows users to download
+Here we present \texttt{rotl}, an R package that allows users to download
 phylogenetic and taxonomic data from the OTL directly in R. \texttt{rotl} takes
 advantage of OTL's Application Programming Interfaces (APIs) to access sub-trees
 from the synthetic Open Tree, as well as the published source trees that
