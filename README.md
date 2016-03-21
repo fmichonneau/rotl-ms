@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fmichonneau/rotl-ms.svg?branch=master)](https://travis-ci.org/fmichonneau/rotl-ms)
+
 # Manuscript describing `rotl`
 
 [`rotl`](https://github.com/ropensci/rotl) is an R package that can be used to

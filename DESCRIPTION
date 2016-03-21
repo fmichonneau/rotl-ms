@@ -1,0 +1,1 @@
+Depends: rotl (>= 0.5.0.901), ggplot2, knitr, rmarkdown, maps
