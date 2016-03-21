@@ -340,10 +340,13 @@ apply to access and process data.
 
 Before a researcher can use the Open Tree to retrieve relationships among a set
 of taxa, they first need to match the taxon names in their dataset with records
-in the Open Tree Taxonomy (OTT). The TNRS allows users to search for taxon
-names, and retreive identifiers for each matching taxon. We demonstrate the use
-of the TNRS within \texttt{rotl} by searching for taxonomic records associated
-with several model organisms.
+in the Open Tree Taxonomy (OTT). OTL's taxonomic names resolution service (TNRS)
+combines information from multiple services (e.g., National Center for
+Biotechnology Information [NCBI], World Register for Marine Species [WoRMS],
+Global Biodiversity Information Facility [GBIF]) and allows users to search for
+taxon names, and retreive identifiers for each matching taxon. We demonstrate
+the use of the TNRS within \texttt{rotl} by searching for taxonomic records
+associated with several model organisms.
 
 <<init, echo=FALSE, purl=FALSE>>=
 library(rotl)
