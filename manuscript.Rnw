@@ -558,13 +558,16 @@ ggplot(lynx_loc) +
 \label{sec:conclusion}
 
 The recognition of the importance of phylogenies to account for the statistical
-non-independence of species in comparative methods, and the recent development
-of methods to explore trait evolution or changes in diversification rates, have
-driven the need for accurate phylogenies. However, there is often a discrepancy
-between taxa targeted by comparative methods, and taxa for which phylogenies are
-available. We believe that by providing an easy-to-use interface to obtain
-phylogenies for an arbitrary set of taxa directly in R, \texttt{rotl} will be
-useful in a wide variety of contexts.
+non-independence of species in comparative methods, the recent development of
+methods to explore trait evolution or changes in diversification rates, and
+attempts to incorporate the evolutionary history of species forming ecological
+communities, have driven the need for accurate phylogenies. However, there is
+often a discrepancy between taxa targeted by studies wanting to use phylogenetic
+information, and taxa for which phylogenies are available. Typically, the latter
+result from focused studies of taxonomic groups, while the former encompass
+species found in a given geographical location or ecosystem. We believe that by
+providing an easy-to-use interface to obtain phylogenies for an arbitrary set of
+taxa directly in R, \texttt{rotl} will be useful in a wide variety of contexts.
 
 The accuracy and usefulness of the data provided by OTL relies on the community
 to make generated phylogenies (and their metadata) digitally available as tree
