@@ -14,7 +14,7 @@ ARTIFACTS=$(manuscript_pdf) \
 	figure
 
 all: $(manuscript_tex) clean-partial appendix
-	cp ~/Library/$(manuscript_bib) .
+	-cp ~/Library/$(manuscript_bib) .
 	-xelatex -interaction=nonstopmode "\input" $<
 	-bibtex $(manuscript_name)
 	-xelatex -interaction=nonstopmode "\input" $<
@@ -47,7 +47,7 @@ clean: clean-partial
 	-rm $(manuscript_app)
 
 clear-cache:
-	- rm -rf ./cache
+	-rm -rf ./cache
 
 distclean:
 	rm -f $(ARTIFACTS)
