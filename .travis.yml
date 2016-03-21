@@ -21,4 +21,4 @@ install:
   - ./travis-tool.sh aptget_install etoolbox
   - ./travis-tool.sh aptget_install texlive-latex-extra
   - ./travis-tool.sh install_github ropensci/rotl
-  - - Rscript -e "source('install_fonts.R'); install_fonts()"
+  - Rscript -e "source('install_fonts.R'); install_fonts()"
