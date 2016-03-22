@@ -13,7 +13,7 @@ ARTIFACTS=$(manuscript_pdf) \
 	cache \
 	figure
 
-all: $(manuscript_tex) clean-partial appendix
+all: $(manuscript_tex) $(manuscript_app) clean-partial
 	-cp ~/Library/$(manuscript_bib) .
 	-xelatex -interaction=nonstopmode "\input" $<
 	-bibtex $(manuscript_name)
@@ -28,7 +28,7 @@ all: $(manuscript_tex) clean-partial appendix
 $(manuscript_tex): $(manuscript_src)
 	Rscript -e "knitr::knit('$<')"
 
-appendix: $(manuscript_src) create_appendix.R
+$(manuscript_app): $(manuscript_src) create_appendix.R
 	Rscript -e "source('create_appendix.R')"
 	rm $(manuscript_name).R
 	rm $(manuscript_name)-appendix.Rmd

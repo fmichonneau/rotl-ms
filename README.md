@@ -17,7 +17,8 @@ A pre-print is available at the
 # How to build the manuscript?
 
 The manuscript is reproducible but you might need to install tools and packages
-to make it work. You will need:
+to make it work. In short, you will need (for more details look at the list of
+Ubuntu packages that are needed in the [.travis.yml](.travis.yml) file):
 
 * R packages
     * Stable versions of [rgbif](https://cran.r-project.org/package=rgbif),
@@ -27,6 +28,8 @@ to make it work. You will need:
     * The development version of [rotl](https://github.com/ropensci/rotl)
 
 * LaTeX installation
+
+* pdftk
 
 * Fonts
   * [Crimson text](http://www.fontsquirrel.com/fonts/crimson)
