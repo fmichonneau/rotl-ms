@@ -224,19 +224,19 @@ outreach activities to explore relationships among species).
 
 The R programming language is a popular tool for phylogenetics and comparative
 analysis. The R packages \texttt{ape} \citep{Paradis2004}, \texttt{phylobase}
-\citep{phylobase-0.8.0}, \texttt{phangorn} \citep{schliep2011} and \texttt{RNeXML} \citep{Boettiger2015} each provide
-functions to import and manipulate trees within R and save the results in
-standard data formats. Additional packages including \texttt{phytools}
-\citep{Revell2012}, \texttt{geiger} \citep{Pennell2014-geiger}, and
-\texttt{ggtree} \citep{Yu-ggtree}, allow users to analyze and visualize data in
-a phylogenetic context (see
-\url{https://cran.r-project.org/web/views/Phylogenetics.html} for a
+\citep{phylobase-0.8.0}, \texttt{phangorn} \citep{schliep2011} and
+\texttt{RNeXML} \citep{Boettiger2015} each provide functions to import and
+manipulate trees within R and save the results in standard data
+formats. Additional packages including \texttt{phytools} \citep{Revell2012},
+\texttt{geiger} \citep{Pennell2014-geiger}, and \texttt{ggtree}
+\citep{Yu-ggtree}, allow users to analyze and visualize data in a phylogenetic
+context (see \url{https://cran.r-project.org/web/views/Phylogenetics.html} for a
 comprehensive list of phylogenetics packages in R). In addition to packages for
 phylogenetic and comparative analyses, a growing number of R packages allows
 users to query and access data from the web (e.g. \texttt{rFISHBASE}
-\citep{Boettiger2012}, \texttt{rAvis} \citep{Varela2014}, and \texttt{paleobioDB}
-\citep{Varela2015}), such that data associated with taxa in a given phylogeny
-can be obtained directly in R.
+\citep{Boettiger2012}, \texttt{rAvis} \citep{Varela2014}, and
+\texttt{paleobioDB} \citep{Varela2015}), such that data associated with taxa in
+a given phylogeny can be obtained directly in R.
 
 In ecology, the development of the field of community phylogenetics
 \citep{Webb2002} has created a need for researchers to have access to the
@@ -247,11 +247,11 @@ distribution of taxa on a phylogeny composed from species occurring at larger
 spatial scale. R packages and other software have been developed to generate
 phylogenies from species lists using taxonomic information or DNA sequences
 \citep[e.g.,][]{Webb2008,Pearse2013}. These phylogenies can then be used for
-community phylogenetics analyses \citep[e.g.,][]{Pearse2015},
-\citep{Kembel2010}, but they are often incomplete or not resolved enough. As OTL
-becomes more comprehensive, and its taxonomic resolution increases, it could
-become a valuable resource for ecologists seeking to use phylogenetic
-information in their research.
+community phylogenetics analyses \citep[e.g.,][]{Pearse2015, Kembel2010}, but
+they are often incomplete or not resolved enough. As OTL becomes more
+comprehensive, and its taxonomic resolution increases, it could become a
+valuable resource for ecologists seeking to use phylogenetic information in
+their research.
 
 These packages, combined with the language's support for literate programming
 (\citealt{Knuth1984}; \citealt{Xie2014}), make R a comprehensive platform for
