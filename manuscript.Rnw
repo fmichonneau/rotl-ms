@@ -197,18 +197,18 @@ in practice, synthesizing phylogenetic data is a difficult task. Phylogenetic
 information is largely scattered, often only available as image files within
 publications, and the lack of standardization to store and represent
 phylogenetic data makes it difficult for researchers to access, synthesize, and
-integrate this information into their own research (\citealt{Stoltzfus2012};
-\citealt{Drew2013}; but see \citealt{Cranston2014} for suggestions of best
+integrate this information into their own research (\citealt{Stoltzfus2012,
+  Drew2013, Magee2014}; but see \citealt{Cranston2014} for suggestions of best
 practices).
 
 The Open Tree of Life (OTL) project aims at assembling and synthesizing our
 current understanding of phylogenetic relationships across all organisms on
-Earth \citep{Hinchliff2015}, while providing tools and services that facilitate
-access to this information. OTL combines taxonomic information that serves as
-the backbone for the phylogenetic relationships, and published phylogenies to
-elucidate relationships among taxa. This combination of information is used to
-structure the comprehensive synthetic tree. Studies can be contributed to the
-synthetic tree through a curator interface
+Earth while providing tools and services that facilitate access to this
+information \citep{Hinchliff2015}. OTL combines taxonomic information that
+serves as the backbone for the phylogenetic relationships, and published
+phylogenies to elucidate relationships among taxa. This combination of
+information is used to structure the comprehensive synthetic tree. Studies can
+be contributed to the synthetic tree through a curator interface
 (\url{https://tree.opentreeoflife.org/curator}), allowing the synthetic tree to
 be continuously updated as relationships are elucidated or reevaluated. The
 current draft of the OTL synthetic tree contains 2.3 million tips. Beyond
@@ -224,7 +224,7 @@ outreach activities to explore relationships among species).
 
 The R programming language is a popular tool for phylogenetics and comparative
 analysis. The R packages \texttt{ape} \citep{Paradis2004}, \texttt{phylobase}
-\citep{phylobase-0.8.0}, and \texttt{RNeXML} \citep{Boettiger2015} each provide
+\citep{phylobase-0.8.0}, \texttt{phangorn} \citep{schliep2011} and \texttt{RNeXML} \citep{Boettiger2015} each provide
 functions to import and manipulate trees within R and save the results in
 standard data formats. Additional packages including \texttt{phytools}
 \citep{Revell2012}, \texttt{geiger} \citep{Pennell2014-geiger}, and
@@ -234,15 +234,32 @@ a phylogenetic context (see
 comprehensive list of phylogenetics packages in R). In addition to packages for
 phylogenetic and comparative analyses, a growing number of R packages allows
 users to query and access data from the web (e.g. \texttt{rFISHBASE}
-\citep{Boettiger2012}, \texttt{rAvis} \citep{Varela2014}, and \texttt{paleoDB}
+\citep{Boettiger2012}, \texttt{rAvis} \citep{Varela2014}, and \texttt{paleobioDB}
 \citep{Varela2015}), such that data associated with taxa in a given phylogeny
-can be obtained directly in R.  These packages, combined with the language's
-support for literate programming (\citealt{Knuth1984}; \citealt{Xie2014}), make
-R an ideal platform for reproducible research in phylogenetics and comparative
-biology, as they allow a complete record of the steps taken in gathering,
-processing, and analyzing a given data set to be produced.
+can be obtained directly in R.
 
-Here we present \texttt{rotl}, and R package that allows users to download
+In ecology, the development of the field of community phylogenetics
+\citep{Webb2002} has created a need for researchers to have access to the
+evolutionary relationships of species making up communities. The relative
+contributions of the role of the environment (e.g., habitat filtering), and of
+biotic interactions (e.g., competitive exclusion), are inferred from the
+distribution of taxa on a phylogeny composed from species occurring at larger
+spatial scale. R packages and other software have been developed to generate
+phylogenies from species lists using taxonomic information or DNA sequences
+\citep[e.g.,][]{Webb2008,Pearse2013}. These phylogenies can then be used for
+community phylogenetics analyses \citep[e.g.,][]{Pearse2015},
+\citep{Kembel2010}, but they are often incomplete or not resolved enough. As OTL
+becomes more comprehensive, and its taxonomic resolution increases, it could
+become a valuable resource for ecologists seeking to use phylogenetic
+information in their research.
+
+These packages, combined with the language's support for literate programming
+(\citealt{Knuth1984}; \citealt{Xie2014}), make R a comprehensive platform for
+reproducible research in phylogenetics and comparative biology, as they allow a
+complete record of the steps taken in gathering, processing, and analyzing a
+given data set to be produced.
+
+Here we present \texttt{rotl}, an R package that allows users to download
 phylogenetic and taxonomic data from the OTL directly in R. \texttt{rotl} takes
 advantage of OTL's Application Programming Interfaces (APIs) to access sub-trees
 from the synthetic Open Tree, as well as the published source trees that
@@ -266,31 +283,33 @@ APIs:
 \item The \emph{synthetic tree} itself, the `Open Tree'.
 \end{enumerate}
 
-Additionally, the project provides access to other data, the Graph of Life, that
-stores information about the underlying tree alignment graph \citep{Smith2013}
-used to synthesize the various sources of information from which the Open Tree
-is assembled. Data from this API are not intended for normal users, and its
-use will not be demonstrated in this paper, although \texttt{rotl} has functions to
-retrieve data it provides.
+\texttt{rotl} gives users access to the endpoints provided by version 2 of the
+APIs, and other versions of the APIs can be selected by the user as they become
+available (version 3 is scheduled to be released at the end of March 2016). Two
+other end-points are available in version 2 of the API: \emph{graph of life} and
+\emph{collections}. Data from the \emph{graph of life} endpoint are not intended
+for typical users, and will be removed in future releases. The \emph{collection}
+endpoint is not fully functional, and no functions are available in the current
+release of \texttt{rotl}. Future versions will make them available when the API
+implements them.
 
-\texttt{rotl} gives users access to all endpoints provided by version 2 of the
-OTL APIs. Phylogenetic trees served by the API can be imported directly into
-R's memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
+Phylogenetic trees served by the API can be imported directly into R's
+memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
 structure (objects of class \texttt{phylo}), or can be written to files in the
 Newick, NEXUS \citep{Maddison1997}, or NeXML \citep{Vos2012} file formats. This
 allows researchers to use these trees either directly with other R packages, or
 to be imported in other programs that make use of phylogenetic tree files.
 
-The full Open Tree currently does not have any branch lengths associated with
+Currently, the synthetic tree does not have any branch lengths associated with
 it, therefore parametric comparative methods cannot be used directly on the
-subtrees returned by OTL (although the OTL treestore contains the raw
-published source phylogenies, complete with branch lengths and node
-annotations; see below). However, resources and methods are being developed to add
-branch lengths to these topological subtrees \citep[e.g.,][]{Ksepka2015} or use
-topological trees to identify phylogenetically equivalent species to increase
-overlap between chronograms and species trait data \citep{Pennell2015}. Without
-branch lengths, these subtrees are nonetheless useful to illustrate relationships
-among species, or to map traits on a phylogeny.
+subtrees returned by OTL (although the OTL treestore contains the raw published
+source phylogenies, complete with branch lengths and node annotations; see
+below). However, resources and methods are being developed to add branch lengths
+to these topological subtrees \citep[e.g.,][]{Ksepka2015} or use topological
+trees to identify phylogenetically equivalent species to increase overlap
+between chronograms and species trait data \citep{Pennell2015}. Without branch
+lengths, these subtrees are nonetheless useful to illustrate relationships among
+species, or to map traits on a phylogeny.
 
 %% any examples available?
 
@@ -298,18 +317,20 @@ among species, or to map traits on a phylogeny.
 
 \section{Technical information about \texttt{rotl}}
 
-Phylogenetic information retrieved from OTL is converted into
-\texttt{ape::phylo} objects by \texttt{rotl} using the NEXUS Class Library
-\citep[NCL,][]{Lewis2003} as implemented in the \texttt{rncl} package
+Phylogenetic information retrieved from OTL is converted into \texttt{phylo}
+objects by \texttt{rotl} using the NEXUS Class Library \citep[NCL,][]{Lewis2003}
+as implemented in the \texttt{rncl} package
 (\url{https://cran.r-project.org/package=rncl}). Using NCL provides robust and
 efficient parsing of large trees that may contain singleton nodes labeled with
-taxonomic information (i.e., monotypic taxon).
+taxonomic information (i.e., a monotypic taxon). Singleton nodes are collapsed
+after the tree has been parsed, making the resulting \texttt{phylo} object
+compatible with all functions from the \texttt{ape} package.
 
-The package is well-documented, and includes two package
-vignettes (documents that demonstrate the use of the package and contain executable
-R code). There is also an extensive test-suite that covers both the internal
-functions that \texttt{rotl} uses to connect to OTL and public functions users
-apply to access and process data.
+The package is well-documented, and includes three package vignettes (documents
+that demonstrate the use of the package and contain executable R code). There is
+also an extensive test-suite that covers both the internal functions that
+\texttt{rotl} uses to connect to OTL, and public functions that users apply to
+access and process data.
 
 
 \section{Demonstrations}
@@ -318,14 +339,15 @@ apply to access and process data.
 \subsection{Getting relationships from a list of taxa}
 \label{sec:get-relationships}
 
-To get the relationships among a set of taxa from the Open Tree, the taxa first
-need to be matched against the OTL taxonomy (OTT) using the TNRS. This step
-retrieves the identifiers that will be used to extract the relationships for the
-set of requested taxa.
-
-To illustrate how to obtain relationships from a set of taxa, we will rely on
-OTL to draw a phylogenetic tree for a set of model organisms. First, we use the function
-\texttt{tnrs\_match\_names} to match the taxon names to their Open Taxonomy identifiers.
+Before a researcher can use the Open Tree to retrieve relationships among a set
+of taxa, they first need to match the taxon names in their dataset with records
+in the Open Tree Taxonomy (OTT). OTL's taxonomic names resolution service (TNRS)
+combines information from multiple services (e.g., National Center for
+Biotechnology Information [NCBI], World Register for Marine Species [WoRMS],
+Global Biodiversity Information Facility [GBIF]) and allows users to search for
+taxon names, and retreive identifiers for each matching taxon. We demonstrate
+the use of the TNRS within \texttt{rotl} by searching for taxonomic records
+associated with several model organisms.
 
 <<init, echo=FALSE, purl=FALSE>>=
 library(rotl)
@@ -346,31 +368,31 @@ taxa <- tnrs_match_names(names = c("Escherichia colli",
 The function \texttt{tnrs\_match\_names} returns a data frame that lists the
 Open Tree identifiers as well as other information to help users ensure that the
 taxa matched are the correct ones. Here, there is no ambiguity in the taxa
-matched; however, as OTT includes taxa from bacteria, plants,
-and animals that are regulated by different nomenclatural codes (ICNP, ICN, and
-ICZN, respectively), both OTL and \texttt{rotl} provide tools to deal with potential
-hemihomonyms. The argument \texttt{context\_name} can be used to limit potential
-matches to a taxonomic group such as ``Animals'' (see the function
-\texttt{tnrs\_contexts} for a complete list of possible options). When this strategy
-cannot be used (as in the present example, where the tree encompasses
-multiple domains), the function \texttt{inspect} lists alternative matches for a taxon
-name, and \texttt{update} replaces it in the results. An example of this
-approach is provided in the vignette ``How to use \texttt{rotl}?'' that
-accompanies the package.
+matched; however, as OTT includes taxa from bacteria, plants, and animals that
+are regulated by different nomenclatural codes (ICNP, ICN, and ICZN,
+respectively), both OTL and \texttt{rotl} provide tools to deal with names that
+may represent valid taxa in more than one code. The argument
+\texttt{context\_name} can be used to limit potential matches to a taxonomic
+group such as ``Animals'' (see the function \texttt{tnrs\_contexts} for a
+complete list of possible options). When this strategy cannot be used (as in the
+present example, where the tree encompasses multiple domains), the function
+\texttt{inspect} lists alternative matches for a taxon name, and \texttt{update}
+replaces it in the results. An example of this approach is provided in the
+vignette ``How to use \texttt{rotl}?'' that accompanies the package.
 
 By default, approximate matching is enabled when attempting to match taxonomic
-names to their OTT identifiers. Additionally, taxonomic synonyms
-are included in OTT, allowing researchers to match correct
-identifiers for taxon names that might include misspellings or synonyms. These
-features will facilitate the tedious data cleaning process often needed when
-mapping taxon names. In the example provided, both \textit{Escherichia coli}
-and \textit{Saccharomyces cerevisiae} are misspelled, but the OTL TNRS finds the
-correct match for these taxa.
+names to their OTT identifiers. Additionally, taxonomic synonyms are included in
+OTT, allowing researchers to match correct identifiers for taxon names that
+might include misspellings or synonyms. These features will facilitate the
+tedious data cleaning process often needed when mapping taxon names. In the
+example provided, both \textit{Escherichia coli} and \textit{Saccharomyces
+  cerevisiae} are misspelled, but the OTL TNRS finds the correct match for these
+taxa.
 
 Now that the taxon names are matched to the Open Tree identifiers, we can pass
 them to the function \texttt{tol\_induced\_subtree} to retrieve the
 relationships among these taxa. In turn, the tree can be plotted directly as it
-is returned as an \texttt{ape::phylo} object (Figure~\ref{fig:plot_taxa}).
+is returned as \texttt{phylo} object (Figure~\ref{fig:plot_taxa}).
 
 <<plot_taxa, fig.height=4, cache=TRUE, purl=FALSE, fig.cap="The phylogenetic tree returned by OTL for the list of model species used as an example.">>=
 tree <- tol_induced_subtree(ott_ids = taxa[["ott_id"]])
@@ -382,21 +404,25 @@ plot(tree, cex = .8, label.offset = .1, no.margin = TRUE)
 
 \texttt{rotl} can also be used to retrieve trees accompanying studies that have
 been submitted through the curator interface, and identify the trees that
-contribute to the synthetic tree. These trees constitute a useful resource to
-reproduce or expand on a previously published analysis, or to explore how the
-elucidation of relationships within a clade has changed through time.
+contribute to the synthetic tree. As of March 2016, the Open Tree of Life
+project stores 7755 trees from 3399 studies (each having between 0 and 61
+trees), and 477 of these trees are used to assemble the synthetic tree. These
+trees constitute a useful resource to reproduce or expand on a previously
+published analysis, or to explore how the elucidation of relationships within
+a clade has changed through time.
 
 Criteria that can be used to search for studies or their associated trees are
 available through the output of the function
-\texttt{studies\_properties}. Typically, users will want to search for studies
-or trees based on taxon names (or their OTT identifiers), but other
-criteria such as the title of the publication can be used. Here we demonstrate
-how to look for and retrieve trees for studies focusing on the family Felidae
-(Figure~\ref{fig:plot_cats}).
+\texttt{studies\_properties}. The meaning of these properties is described at:
+\url{https://github.com/OpenTreeOfLife/phylesystem-api/wiki/NexSON}. Typically,
+users will want to search for studies or trees based on taxon names (or their
+OTT identifiers), but other criteria such as the title of the publication can be
+used. Here we demonstrate how to look for and retrieve trees for studies
+focusing on the family Felidae (Figure~\ref{fig:plot_cats}).
 
 <<get_cats, purl=FALSE, fig.cap="Tree from \\citealt{Johnson2006} obtained from OTL">>=
 cat_studies <- studies_find_studies(property = "ot:focalCladeOTTTaxonName",
-                                    value = "felidae")
+                                    value = "Felidae", exact = TRUE)
 cat_studies
 @
 
@@ -422,51 +448,65 @@ plot(cat_tree, label.offset=.0001, cex=.75, no.margin=TRUE)
 When more than one tree is available for a given study, the function
 \texttt{list\_trees} returns a list containing the tree identifiers for each
 study. Alternatively, the function \texttt{get\_study} returns all the trees (by
-default as \texttt{ape::phylo} objects) associated with a particular
-study. Additional details about the study (i.e., its metadata) can be obtained
-using the function \texttt{get\_study\_meta}.
+default as \texttt{phylo} objects) associated with a particular study. Metadata
+about the study (e.g., citation information, information about the curator for
+the study, and other technical information regarding the import of this study)
+can be obtained using the function \texttt{get\_study\_meta}.
 
 
 \subsection{How does \texttt{rotl} fit into the R package ecosystem?}
 \label{sec:how-does-rotl-fit}
 
 In recent years, R has become an essential part of the toolbox of many
-researchers in evolutionary biology. R greatly facilitates the analysis of large
-datasets, and allows researchers to combine methods in novel ways because many
-methods for comparative analyses are implemented, and because it is a relatively
-easy to use programming language. Additionally, as more data are made available
-online and accessible using APIs, several packages have been developed to
-interact and download these datasets directly in R, thereby enabling direct and
-reproducible analyses.  Notably, the organization rOpenSci
+researchers in evolutionary biology and ecology. R greatly facilitates the
+analysis of large datasets, and allows researchers to combine methods in novel
+ways because many methods for comparative analyses are implemented, and because
+it is a relatively easy to use programming language. Additionally, as more data
+are made available online and accessible using APIs, several packages have been
+developed to interact and download these datasets directly in R, thereby
+enabling direct and reproducible analyses.  Notably, the organization rOpenSci
 (\url{https://ropensci.org}) has fostered a community of researchers who develop
 tools and methods to facilitate the use of open data as well broaden the
-adoption of open science practices in general. For instance, the
-rOpenSci-developed packge \texttt{TreeBase} \citep{Boettiger2012TB} allows users
-to access phylogenies stored in treeBASE (\url{www.treebase.org}).
-\texttt{rotl} contributes to this initiative, and greatly extends the number of
-taxa for which phylogenetic data can be retrieved within R, while allowing the
-data from OTL to be combined with other sources easily.
+adoption of open science practices in general \citep{Boettiger2015a}. For
+instance, the rOpenSci-developed package \texttt{TreeBase}
+\citep{Boettiger2012TB} allows users to access phylogenies stored in treeBASE
+(\url{www.treebase.org}).  \texttt{rotl} contributes to this initiative, and
+greatly extends the number of taxa for which phylogenetic data can be retrieved
+within R, while allowing the data from OTL to be combined with other sources
+easily.
 
-The package vignettes provide two demonstrations of the integration of a
-phylogeny and data associated with the taxa it represents. Specifically, the ``Data
-mashups'' vignette provides an example of how data associated with tip-taxa can
-be gathered and visualized. Another vignette titled ``meta-analysis''
-demonstrates how a complete analysis, including the gathering of data and a
-phylogeny, can be performed in a single R session. We further demonstrate the
-integration of phylogenetic data retrieved using \texttt{rotl} with other data
-here. We show how we can obtain a map of the occurrences for some of the cat
-species (genus \textit{Lynx}) included in the phylogeny above using records for
-these species found in GBIF (Figure~\ref{fig:cat_map}; code available in the
-Appendix).
+Here we show how we can obtain a map of the occurrences for a subset of the cat
+species that were included in the phylogeny retrieved from the Felidae study
+above (genus \textit{Lynx}). We extract the species names from the phylogeny,
+and use them to ask for the records for these species found in GBIF
+(Figure~\ref{fig:cat_map}). We include the code to reproduce this figure in
+Appendix.
+
+As trait databases are becoming increasingly more common, and interfaces to the
+data they contains are being developed as R packages \citep[e.g., the package
+\texttt{traits}][]{Chamberlain2016}, \texttt{rotl} provides a way to easily
+retrieve phylogenetic information for species trait data that are available.
+
+In addition of an introduction on how to use the package, \texttt{rotl} includes
+two vignettes that demonstrate how to integrate a phylogeny and data associated
+with the taxa it represents. Specifically, the ``Data mashups'' vignette
+provides an example of how to retrieve a phylogeny for species a researcher may
+have data for, and visualize both the phylogeny and data associated with the
+species at the tips. The other vignette titled ``Meta-analysis'' demonstrates
+how a complete comparative method analysis, including the gathering of data and
+a phylogeny, can be performed in a single R session. We reproduce a published
+meta-analysis testing for differential investment in male and female offsprings
+among 51 species of birds. As new versions of the OTL API and \texttt{rotl} are
+released, these vignettes will be kept up-to-date.
 
 
 
 <<cat_map, purl=TRUE, echo=FALSE, size='small', fig.height=4.2, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}.'>>=
-## load required packages
-library(rotl)
-library(rgbif)
-library(ggplot2)
-library(maps)
+## load required packages. Versions used for the manuscript listed below.
+library(rotl)     # v0.5.0.901
+library(rgbif)    # v0.9.2
+library(ggplot2)  # v2.1.0
+library(maps)     # v3.1.0
 
 ## Import the felid tree using study and tree IDs discovered with
 ## studies_find_studies() in the manuscript
@@ -518,13 +558,16 @@ ggplot(lynx_loc) +
 \label{sec:conclusion}
 
 The recognition of the importance of phylogenies to account for the statistical
-non-independence of species in comparative methods, and the recent development
-of methods to explore trait evolution or changes in diversification rates, have
-driven the need for accurate phylogenies. However, there is often a discrepancy
-between taxa targeted by comparative methods, and taxa for which phylogenies are
-available. We believe that by providing an easy-to-use interface to obtain
-phylogenies for an arbitrary set of taxa directly in R, \texttt{rotl} will be
-useful in a wide variety of contexts.
+non-independence of species in comparative methods, the recent development of
+methods to explore trait evolution or changes in diversification rates, and
+attempts to incorporate the evolutionary history of species forming ecological
+communities, have driven the need for accurate phylogenies. However, there is
+often a discrepancy between taxa targeted by studies wanting to use phylogenetic
+information, and taxa for which phylogenies are available. Typically, the latter
+result from focused studies of taxonomic groups, while the former encompass
+species found in a given geographical location or ecosystem. We believe that by
+providing an easy-to-use interface to obtain phylogenies for an arbitrary set of
+taxa directly in R, \texttt{rotl} will be useful in a wide variety of contexts.
 
 The accuracy and usefulness of the data provided by OTL relies on the community
 to make generated phylogenies (and their metadata) digitally available as tree
@@ -543,8 +586,8 @@ information available and re-usable.
 license. Stable versions are available from the CRAN repository
 (\url{https://cran.r-project.org/package=rotl}), and development versions are
 available from GitHub (\url{https://github.com/ropensci/rotl}). This manuscript
-was built using version 0.4.1.999-rotl-ms.1
-(\url{https://github.com/ropensci/rotl/tree/v0.4.1.999-rotl-ms.1}). The package
+was built using version 0.5.0.901-rotl-ms.2
+(\url{https://github.com/ropensci/rotl/tree/v0.5.0.901-rotl-ms.2}). The package
 is under active development, and authors welcome bug reports or feature requests
 via the GitHub repository.  The source for this manuscript is available on
 GitHub (\url{https://github.com/fmichonneau/rotl-ms}).
@@ -560,12 +603,13 @@ with the OTL APIs are also available.
 We would like to thank the organizers of the OpenTree of Life APIs hackathon
 that was held at the University of Michigan, Ann Arbor, 15-19 September, 2014,
 where the development of \texttt{rotl} was started. We would also like to thank
-Scott Chamberlain (rOpenSci) for providing a thorough code review and Shinichi
-Nakagawa and Alistair Senior for their help in developing the package's
-meta-analysis vignette. DJW was supported by NIH Grant R01-GM101352. FM was
-supported by iDigBio, and therefore this material is based upon work supported
-by the National Science Foundation’s Advancing Digitization of Biodiversity
-Collections Program (Cooperative Agreement EF-1115210).
+Scott Chamberlain (rOpenSci) for providing a thorough code review, Scott
+Chamberlain and Ross Mounce for commenting on the pre-print version of this
+manuscript, and Shinichi Nakagawa and Alistair Senior for their help in
+developing the package's meta-analysis vignette. DJW was supported by NIH Grant
+R01-GM101352. FM was supported by iDigBio, and therefore this material is based
+upon work supported by the National Science Foundation’s Advancing Digitization
+of Biodiversity Collections Program (Cooperative Agreement EF-1115210).
 
 \bibliographystyle{sysbio}
 

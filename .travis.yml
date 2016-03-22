@@ -1,0 +1,29 @@
+dist: trusty
+
+language: c
+
+sudo: required
+
+script:
+  - make
+
+before_install:
+  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
+  - chmod 755 ./travis-tool.sh
+  - ./travis-tool.sh bootstrap
+
+install:
+  - ./travis-tool.sh install_deps
+  - ./travis-tool.sh aptget_install pandoc
+  - ./travis-tool.sh aptget_install pandoc-citeproc
+  - ./travis-tool.sh aptget_install texlive-latex-recommended
+  - ./travis-tool.sh aptget_install texlive-fonts-recommended
+  - ./travis-tool.sh aptget_install texlive-humanities
+  - ./travis-tool.sh aptget_install texlive-xetex
+  - ./travis-tool.sh aptget_install texlive-luatex
+  - ./travis-tool.sh aptget_install pandoc-citeproc
+  - ./travis-tool.sh aptget_install etoolbox
+  - ./travis-tool.sh aptget_install texlive-latex-extra
+  - ./travis-tool.sh install_github ropensci/rotl
+  - Rscript -e "source('install_fonts.R'); install_fonts()"
+  - ./travis-tool.sh aptget_install pdftk
