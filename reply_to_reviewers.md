@@ -1,8 +1,19 @@
 Dear Professor Freckleton,
 
 We thank the associate editor and reviewer for their comments, which have
-improved our manuscript and the software it describes. Here we provide detailed
+improved our manuscript and the software it describes. Below we provide detailed
 replies to specific comments.
+
+The developers working on the Open Tree of Life APIs have informed us that a new
+version of the APIs is going to be released in the next few weeks. We don't
+expect these changes to impact what we describe in the manuscript, but small
+tweaks to the package might be needed.
+
+We look forward to hearing back from you.
+
+  François Michonneau on behalf of Joseph Brown and David Winter
+
+
 
 ## Associate Editor
 
@@ -57,7 +68,7 @@ with several model organisms._
 >l. 118: "henihomonyms" may warrant a definition or replacement with
 >something simpler.
 
-replaced with "names that may represent valid taxa in more than one code."
+replaced with "_names that may represent valid taxa in more than one code._"
 
 >l. 136: it would be nice to know how many studies have been entered
 >here, especially as a fraction of published trees.
@@ -84,8 +95,9 @@ https://github.com/ropensci/taxize/issues/517
 > One thing I thought was missing was a discussion about the importance of rolt
 > to the field of ecology.
 
-We added a paragraph (l. xxx-xxx) that describes how `rotl` can be used as a
-data source for community phylogenetics.
+We added a paragraph (l. 60-70) that describes how `rotl` can be used as a
+data source for community phylogenetics. We also mention community ecology in
+the concluding remarks (l. 202-210).
 
 > 1) Can user generated trees be easily incorporated into an output tree from
 > rotl? Perhaps by implementing some of the algorithms used to integrate the
@@ -108,16 +120,16 @@ API.
 
 We included the code for the GBIF example as an appendix as it seemed too long
 to be included in the text of the manuscript, and not long enough to warrant its
-own vignette. We didn't include the other vignettes in appendix to ensure that
-we can update the code they include in case the API changes.
+own vignette. We didn't include the other vignettes as appendices to ensure that
+we can update the code they include when the API changes.
 
 > 3) How might rolt be combined with trait databases? This was briefly mentioned
 > at the end of the vignette “Connecting data to Open Tree trees”, but might be
 > mentioned in the manuscript as well (for example, in the subsection “How does
 > rotl fit into the R package ecosystem?”).
 
-We added a paragraph to highlight that rotl can be used to provide a
-phylogenetic context to available trait data.
+We added a paragraph to highlight that `rotl` can be used to provide a
+phylogenetic context to available trait data (l. 189-191).
 
 > Page 1, paragraph 1: A comment about the importance of phylogenies for ecology
 > could be added here…
@@ -135,34 +147,31 @@ Done
 > suites of metrics for community phylogenetics).
 
 We added a paragraph about the use of phylogenetics in community ecology,
-inclding a description of R packages that can be used for these analysis [Pg
-Line]
+including a description of R packages that can be used for these analysis
+(l. 65-70).
 
 > Page 4, point #2: So not all studies that can be queried through the API were
 > included in the OTL? Perhaps this can be explained a bit more here (or in the
 > “Getting trees from studies” subsection).
 
-We added the number of studies that have been submitted through the curator
-app, and the number of studies that contribute to the synthetic tree to clarify
-this point. 
-
-"As of March 2016, the Open Tree of Life project stores 7755 trees from 3399 
-studies (each having between 0 and 61 trees), and 477 of these trees are used 
-to assemble the synthetic tree."
+We added the number of studies that have been submitted through the curator app,
+and the number of studies that contribute to the synthetic tree to clarify this
+point: "_As of March 2016, the Open Tree of Life project stores 7755 trees from
+3399 studies (each having between 0 and 61 trees), and 477 of these trees are
+used to assemble the synthetic tree._"
 
 > Page 9, line 150: What type of metadata can be extracted from a study? Is it
 > just the citation (which is the example given in “How to use rotl?” vignette)?
 
 There is a lot more information associated with each study. We re-worded the
-paragraph to mention some of them.
-
-"Metadata about the study (e.g., citation information, information about
-the curator for the study, and other technical information regarding the import
-of this study) can be obtained using the function `get_study_meta`
+paragraph to mention some of them: "_Metadata about the study (e.g., citation
+information, information about the curator for the study, and other technical
+information regarding the import of this study) can be obtained using the
+function `get_study_meta`_."
 
 > Page 10, paragraph 2, line 169: “other data” is a bit vague. Integration with
 > other data, for example species distribution data, is demonstrated in the
 > appendix (but not the main manuscript)
 
 We re-wrote this paragraph to be more specific about the type of data that can
-be linked to the phylogenies storred in `rotl`.
+be linked to the phylogenies storred in `rotl` (l. 168-169).
