@@ -160,18 +160,26 @@ Invertebrate Zoology, Florida Museum of Natural History, Gainesville, FL
 
 \subsubsection{Abstract}
 
-While phylogenies have been getting easier to build, it has been difficult to
-re-use, combine, and synthesize the information they provide because published
-trees are often only available as image files, and taxonomic information is not
-standardized across studies. The Open Tree of Life (OTL) project addresses these
-issues by providing a digital tree that encompasses all organisms, built by
-combining taxonomic information and published phylogenies. The project also
-provides tools and services to query and download parts of this synthetic tree,
-as well as the source data used to build it. Here, we present \texttt{rotl}, an
-R package to search and download data from the Open Tree of Life directly in
-R. \texttt{rotl} uses common data structures allowing researchers to take
-advantage of the rich set of tools and methods that are available in R to
-manipulate, analyze, and visualize phylogenies.
+\begin{enumerate}
+\item While phylogenies have been getting easier to build, it has been difficult
+  to re-use, combine, and synthesize the information they provide because
+  published trees are often only available as image files, and taxonomic
+  information is not standardized across studies.
+\item The Open Tree of Life (OTL) project addresses these issues by providing a
+  digital tree that encompasses all organisms, built by combining taxonomic
+  information and published phylogenies. The project also provides tools and
+  services to query and download parts of this synthetic tree, as well as the
+  source data used to build it. Here, we present \texttt{rotl}, an R package to
+  search and download data from the Open Tree of Life directly in R.
+\item \texttt{rotl} uses common data structures allowing researchers to take
+  advantage of the rich set of tools and methods that are available in R to
+  manipulate, analyze, and visualize phylogenies. Here, and in the vignettes
+  accompanying the package, we demonstrate how \texttt{rotl} can be used with
+  other R packages to analyze biodiversity data.
+\item As phylogenies are being used in a growing number of applications,
+  \texttt{rotl} facilitates access to phylogenetic data, and allows their
+  integration with statistical methods and data sources available in R.
+\end{enumerate}
 
 
 \vspace{1.5in}
