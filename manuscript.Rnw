@@ -616,10 +616,10 @@ Chamberlain and Ross Mounce for commenting on the pre-print version of this
 manuscript, Shinichi Nakagawa and Alistair Senior for their help in developing
 the package's meta-analysis vignette, and Rich FitzJohn (Associate Editor) and
 an anonymous reviewer for comments on the manuscript. DJW was supported by NIH
-Grant R01-GM101352. FM was supported by iDigBio, and therefore this material is
-based upon work supported by the National Science Foundation’s Advancing
-Digitization of Biodiversity Collections Program (Cooperative Agreement
-EF-1115210).
+Grant R01-GM101352. FM was supported by 1923 Fund and by iDigBio, and therefore
+this material is based upon work supported by the National Science Foundation’s
+Advancing Digitization of Biodiversity Collections Program (Cooperative
+Agreement EF-1115210).
 
 \bibliographystyle{sysbio}
 
