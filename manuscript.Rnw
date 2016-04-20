@@ -232,7 +232,7 @@ outreach activities to explore relationships among species).
 
 The R programming language is a popular tool for phylogenetics and comparative
 analysis. The R packages \texttt{ape} \citep{Paradis2004}, \texttt{phylobase}
-\citep{phylobase-0.8.0}, \texttt{phangorn} \citep{schliep2011} and
+\citep{phylobase-0.8.0}, \texttt{phangorn} \citep{schliep2011}, and
 \texttt{RNeXML} \citep{Boettiger2015} each provide functions to import and
 manipulate trees within R and save the results in standard data
 formats. Additional packages including \texttt{phytools} \citep{Revell2012},
@@ -291,15 +291,9 @@ APIs:
 \item The \emph{synthetic tree} itself, the `Open Tree'.
 \end{enumerate}
 
-\texttt{rotl} gives users access to the endpoints provided by version 2 of the
+\texttt{rotl} gives users access to the endpoints provided by version 3 of the
 APIs, and other versions of the APIs can be selected by the user as they become
-available (version 3 is scheduled to be released at the end of March 2016). Two
-other end-points are available in version 2 of the API: \emph{graph of life} and
-\emph{collections}. Data from the \emph{graph of life} endpoint are not intended
-for typical users, and will be removed in future releases. The \emph{collection}
-endpoint is not fully functional, and no functions are available in the current
-release of \texttt{rotl}. Future versions will make them available when the API
-implements them.
+available.
 
 Phylogenetic trees served by the API can be imported directly into R's
 memory and are represented using the \texttt{ape} \citep{Paradis2004} tree
