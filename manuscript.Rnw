@@ -397,7 +397,7 @@ relationships among these taxa. In turn, the tree can be plotted directly as it
 is returned as \texttt{phylo} object (Figure~\ref{fig:plot_taxa}).
 
 <<plot_taxa, fig.height=4, cache=TRUE, purl=FALSE, fig.cap="The phylogenetic tree returned by OTL for the list of model species used as an example.">>=
-tree <- tol_induced_subtree(ott_ids = taxa[["ott_id"]])
+tree <- tol_induced_subtree(ott_ids = ott_id(taxa))
 plot(tree, cex = .8, label.offset = .1, no.margin = TRUE)
 @
 
@@ -453,7 +453,8 @@ study. Alternatively, the function \texttt{get\_study} returns all the trees (by
 default as \texttt{phylo} objects) associated with a particular study. Metadata
 about the study (e.g., citation information, information about the curator for
 the study, and other technical information regarding the import of this study)
-can be obtained using the function \texttt{get\_study\_meta}.
+can be obtained using the functions \texttt{get\_study\_meta} and
+\texttt{study\_external\_IDs}.
 
 
 \subsection{How does \texttt{rotl} fit into the R package ecosystem?}
@@ -464,15 +465,15 @@ researchers in evolutionary biology and ecology. R greatly facilitates the
 analysis of large datasets, and allows researchers to combine methods in novel
 ways because many methods for comparative analyses are implemented, and because
 it is a relatively easy to use programming language. Additionally, as more data
-are made available online and accessible using APIs, several packages have been
-developed to interact and download these datasets directly in R, thereby
+are made available online and accessible using web APIs, several packages have
+been developed to interact and download these datasets directly in R, thereby
 enabling direct and reproducible analyses.  Notably, the organization rOpenSci
 (\url{https://ropensci.org}) has fostered a community of researchers who develop
 tools and methods to facilitate the use of open data as well broaden the
 adoption of open science practices in general \citep{Boettiger2015a}. For
 instance, the rOpenSci-developed package \texttt{TreeBase}
-\citep{Boettiger2012TB} allows users to access phylogenies stored in treeBASE
-(\url{www.treebase.org}).  \texttt{rotl} contributes to this initiative, and
+\citep{Boettiger2012TB} allows users to access phylogenies stored in TreeBASE
+(\url{https://treebase.org}).  \texttt{rotl} contributes to this initiative, and
 greatly extends the number of taxa for which phylogenetic data can be retrieved
 within R, while allowing the data from OTL to be combined with other sources
 easily.
@@ -505,8 +506,8 @@ released, these vignettes will be kept up-to-date.
 
 <<cat_map, purl=TRUE, echo=FALSE, size='small', fig.height=4.2, results='hide', message=FALSE, cache=TRUE, fig.cap='GBIF records for the species in \\textit{Lynx} included in the phylogeny associated with the study by \\citealt{Johnson2006}.'>>=
 ## load required packages. Versions used for the manuscript listed below.
-library(rotl)     # v0.5.0.901
-library(rgbif)    # v0.9.2
+library(rotl)     # v3.0.0
+library(rgbif)    # v0.9.3
 library(ggplot2)  # v2.1.0
 library(maps)     # v3.1.0
 
@@ -588,8 +589,8 @@ information available and re-usable.
 license. Stable versions are available from the CRAN repository
 (\url{https://cran.r-project.org/package=rotl}), and development versions are
 available from GitHub (\url{https://github.com/ropensci/rotl}). This manuscript
-was built using version 0.5.0.901-rotl-ms.2
-(\url{https://github.com/ropensci/rotl/tree/v0.5.0.901-rotl-ms.2}). The package
+was built using \texttt{rotl} 3.0.0
+(\url{https://github.com/ropensci/rotl/tree/v3.0.0}). The package
 is under active development, and authors welcome bug reports or feature requests
 via the GitHub repository.  The source for this manuscript is available on
 GitHub (\url{https://github.com/fmichonneau/rotl-ms}).
