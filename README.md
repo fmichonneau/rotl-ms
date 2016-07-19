@@ -10,9 +10,17 @@ started with it.
 A pre-print is available at the
 [PeerJ PrePrints](https://peerj.com/preprints/1471/) and can be cited as:
 
-> Michonneau F, Brown JW, Winter D. (2015) rotl, an R package to interact with
+> Michonneau F, Brown JW, Winter D. (2016) rotl, an R package to interact with
 > the Open Tree of Life data. PeerJ PrePrints 3:e1834
-> <https://dx.doi.org/10.7287/peerj.preprints.1471v1>
+> <https://dx.doi.org/10.7287/peerj.preprints.1471v3>
+
+
+The peer-reviewed paper is now published in
+[Methods in Ecology & Evolution](https://doi.org/10.1111/2041-210X.12593)
+
+> Michonneau, F., Brown, J. W. and Winter, D. J. (2016), rotl: an R package to
+> interact with the Open Tree of Life data. Methods in Ecology and
+> Evolution. doi:10.1111/2041-210X.12593
 
 # How to build the manuscript?
 
