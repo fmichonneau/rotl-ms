@@ -13,7 +13,7 @@ ARTIFACTS=$(manuscript_pdf) \
 	cache \
 	figure
 
-all: $(manuscript_tex) $(manuscript_app) clean-partial
+all: $(manuscript_tex) $(manuscript_app) $(manuscript_doc) clean-partial
 	-cp ~/Library/$(manuscript_bib) .
 	-xelatex -interaction=nonstopmode "\input" $<
 	-bibtex $(manuscript_name)

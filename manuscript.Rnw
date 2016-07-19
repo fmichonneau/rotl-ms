@@ -1,4 +1,3 @@
-
 \documentclass[12pt,letterpaper]{article}
 
 %%%%% packages provided by sys bio template
@@ -64,9 +63,9 @@
 \setdefaultlanguage[variant=american]{english}
 
 % Use fancy fonts
-\usepackage{fontspec}
-\setmainfont[Mapping=tex-text]{Crimson Text}
-\setsansfont{SourceSansPro-Regular}
+ \usepackage{fontspec}
+ \setmainfont[Mapping=tex-text]{Crimson Text}
+ \setsansfont{SourceSansPro-Regular}
 
 %%% syst bio options
 \linespread{1.66}
@@ -619,5 +618,9 @@ Agreement EF-1115210).
 \bibliographystyle{sysbio}
 
 \bibliography{rotl-manuscript}
+
+\section{Supplementary Information}
+
+\textbf{Appendix:} Source code used to generate Figure \ref{fig:cat_map}.
 
 \end{document}
